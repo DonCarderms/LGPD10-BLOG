@@ -1,0 +1,100 @@
+body{
+    background-color: #866AE3;
+}
+.formLogin{
+    border-radius: 25px;
+    width: 900px;
+    min-width: 300px;
+    height: 600px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    box-shadow: 1px 0px 12px 4px #673ab7
+}
+.item{
+    width: 350px;
+    /* margin: 10px; */
+}
+.foto img{
+    width: 60%;
+    height: 60%;
+}
+.foto{
+    border-radius: 25px 0 0  25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 480px;
+    height: 100%;
+    background-color: rgb(101, 101, 152);
+}
+
+.login{
+    width: 420px;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 0 25px 25px 0;
+}
+.login h1{
+    text-align: center;
+}
+.login h2{
+    text-align: center;
+}
+
+input{
+    font-weight: 500;
+    font-size: 1em;
+    border: 0;
+    border-bottom: 1px solid #000;
+    outline: none;
+    width: 250px;
+    margin: 20px;
+    padding: 10px 0px;
+}
+.entrar{
+    cursor: pointer;
+    border: none;
+    height: 40px;
+    border-radius: 10px;
+    color: #ffff;
+    background-color: #656598;
+}
+.entrar:hover{
+    background-color: #593cc0;
+}
+.div-entrar{
+    width: 100%;
+    text-align: center;
+}
+.div-input{
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+.gmail, .key{
+    width: 30px;
+    position: absolute;
+    top: 20px;
+    right: 80px;
+}
+
+@media screen and (max-width: 900px) {
+    .formLogin{
+        width: 500px;
+    }
+    .foto{
+        height: 300px;
+        width: 500px;
+        border-radius: 25px 25px 0 0 ;
+    }
+    .login{
+        height: 400px;
+        width: 500px;
+        border-radius: 0 0 25px 25px;
+    }
+    .gmail, .key{
+        right: 125px;
+    }
+}

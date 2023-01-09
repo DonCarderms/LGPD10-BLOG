@@ -1,24 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Switch, Routes, Route , link} from 'react-router-dom';
+import './App.css'
+
+// routes
+import Login from "./pages/login/index";
+import Cadastro from "./pages/cadastro/index";
+import Admin from "./pages/administrador/index";
+import Home from "./pages/home/index";
+import Autor from "./pages/autor/index";
+import PaginaDeErro from "./pages/404/index";
 
 function App() {
-  return (
+
+  return ( 
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Routes>
+              <Route path="/" element={<Login />}/>
+              <Route path="/login" element={<Login />}/>
+              <Route path="/cadastro" element={<Cadastro/>}/>
+              <Route path="/admin" element={<Admin />}/>
+              <Route path="/home" element={<Home />}/>
+              <Route path="/autor" element={<Autor/>}/>
+              <Route path="/postagem" element/>
+              <Route path="/404" element={<PaginaDeErro />}/>
+        </Routes>
+      </Router>
     </div>
+    // Rotas
   );
 }
 

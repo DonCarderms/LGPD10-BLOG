@@ -1,0 +1,83 @@
+{
+  "administrador": [
+    {
+      "email": "donroot@gmail.com",
+      "senha": "donroot"
+    }
+  ],
+  "user": [
+    {
+      "id": 0,
+      "nome": "donerms",
+      "email": "derni@gmail.com",
+      "senha": "@dfdsf455"
+    },
+    {
+      "nome": "Don carderms",
+      "email": "doncarderms@gmail.com",
+      "senha": "2468",
+      "id": 1
+    },
+    {
+      "nome": "Derni loko",
+      "email": "lokoggjk@gmail.com",
+      "senha": "234356@wer",
+      "id": 2
+    },
+    {
+      "nome": "bugi loko",
+      "email": "bugikolo@gmail.com",
+      "senha": "2343refr345",
+      "id": 3
+    },
+    {
+      "nome": "Derni loko2",
+      "email": "dfgfd",
+      "senha": "gfgdf",
+      "id": 4
+    },
+    {
+      "nome": "Derni loko1",
+      "email": "sfdsfg",
+      "senha": "dgfgdfg",
+      "id": 5
+    },
+    {
+      "nome": "bugi kani",
+      "email": "kali23@gmail.com",
+      "senha": "kali89",
+      "id": 6
+    }
+  ],
+  "autor": [
+    {
+      "id": 0,
+      "nome": "autor1",
+      "email": "autor1@gmail.com",
+      "senha": "@fmdngnfgf"
+    }
+  ],
+  "categorias": [
+    {
+      "id": 0,
+      "nome": ""
+    }
+  ],
+  "postagens": [
+    {
+      "id": 0,
+      "autor": "",
+      "categoria_id": 1,
+      "titulo": "basaska",
+      "conteudo": "bla bla bla"
+    }
+  ],
+  "comentarios": [
+    {
+      "id": 0,
+      "user_id": 0,
+      "postagem_id": 0,
+      "conteudo": "bla bla bla"
+    }
+  ]
+}
