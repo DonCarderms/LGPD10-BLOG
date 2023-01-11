@@ -2,7 +2,6 @@ import React, {useState, useEffect} from "react";
 import { BrowserRouter as Router, Switch, Routes, Route , Link} from 'react-router-dom';
 import './login.css'
 
-import Home from "../home/index";
 
 
 function Login () {
@@ -37,6 +36,20 @@ function Login () {
              }
             })
 
+        fetch('http://localhost:3000/autor')
+        .then((reponse) => reponse.json())
+        .then((reponse) => {
+             console.log(reponse) 
+             const [{email, senha, nome, id}] = reponse
+             if(emailInput === email && password === senha){
+                const autorTken = geradorDeToken(50)
+                localStorage.setItem('autor', nome )
+                localStorage.setItem('autorId', id )
+                sessionStorage.setItem('autorSession', autorTken)
+                window.location.href=`http://localhost:3001/autor`;
+             }
+            })
+
 
          fetch(url)
             .then((reponse) => reponse.json())
@@ -63,43 +76,56 @@ function Login () {
     }
 
     return(
-        <div className="formLogin">
-            
-            <div className="item foto">
-                <img src="https://consultoriaprebianchi.com.br/wp-content/uploads/2021/05/Lei-Geral-de-Prote%C3%A7%C3%A3o-de-Dados.png" alt="" />
-            </div>
-            <div className="item login">
+        <div style={
+            {
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                width: '100%',
+                height: '100vh' ,
+                backgroundColor : '#866AE3'
                 
-                <h1>
-                    login
-                </h1>
-                <form >
-                        <div className="email div-input" >
-                            <img className="gmail" src="https://img.icons8.com/neon/96/null/experimental-filled-message-neon.png"/>
-                            <input type="text"         
-                                placeholder="email"
-                                required
-                                autoComplete="on"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
+            }
+        }>
+
+            <div className="formLogin">
+                
+                <div className="item foto">
+                    <img src="https://consultoriaprebianchi.com.br/wp-content/uploads/2021/05/Lei-Geral-de-Prote%C3%A7%C3%A3o-de-Dados.png" alt="" />
+                </div>
+                <div className="item login">
+                    
+                    <h1>
+                        login
+                    </h1>
+                    <form >
+                            <div className="email div-input" >
+                                <img className="gmail" src="https://img.icons8.com/neon/96/null/experimental-filled-message-neon.png"/>
+                                <input type="text"         
+                                    placeholder="email"
+                                    required
+                                    autoComplete="on"
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
+                                    />
+                            </div>
+                            <div className="password div-input">
+                            <img className="key" src="https://img.icons8.com/ultraviolet/40/null/password.png"/>
+                                <input type="password" 
+                                    placeholder="senha"
+                                    required 
+                                    value={password}
+                                    onChange={(e) => setPassword(e.target.value)}
                                 />
-                        </div>
-                        <div className="password div-input">
-                        <img className="key" src="https://img.icons8.com/ultraviolet/40/null/password.png"/>
-                            <input type="password" 
-                                placeholder="senha"
-                                required 
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)}
-                            />
-                        </div>  
-                        <div className="div-entrar">
-                            <input className="entrar" type="button"  value={'entrar'} onClick={logar}/>
-                        </div>  
-                        <div className="div-input">
-                            <p>ainda não tem cadastro? <Link to='/cadastro' >cadastre-se </Link></p>
-                        </div>                 
-                </form>
+                            </div>  
+                            <div className="div-entrar">
+                                <input className="entrar" type="button"  value={'entrar'} onClick={logar}/>
+                            </div>  
+                            <div className="div-input">
+                                <p>ainda não tem cadastro? <Link to='/cadastro' >cadastre-se </Link></p>
+                            </div>                 
+                    </form>
+                </div>
             </div>
         </div>
     )

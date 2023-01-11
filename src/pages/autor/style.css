@@ -1,0 +1,55 @@
+.div-app{
+    width: 100%;
+}
+
+.post-autor {
+    height: 279px;
+    background-color: #f1f1f1;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-width: 900px;
+    margin: auto;
+    margin-top: 150px;
+    box-shadow: 3px 3px 5px #999;
+    margin-bottom: 20px;
+  }
+  #fname{
+    max-width: 800px;
+  }
+ #fname, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+  }
+  
+  .container {
+    border-radius: 5px;
+    padding: 20px;
+  }
+  
+  .submit-post-btn{
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+  }
+  
+.submit-post-btn:hover {
+    background-color: #45a049;
+  }
+.Posts-home{  
+   max-width:900px;
+    margin: auto;
+    margin: auto;
+    height: 500px;
+    overflow-y: scroll;
+}
+::-webkit-scrollbar {
+    background-color: rgb(255, 255, 255);
+}

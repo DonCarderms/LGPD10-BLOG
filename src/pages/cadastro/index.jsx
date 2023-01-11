@@ -7,9 +7,9 @@ function Cadastro () {
 
     const url = 'http://localhost:3000/user'
 
-    const [nome, setNome] = useState('');
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+    const [nome, setNome] = useState();
+    const [email, setEmail] = useState();
+    const [password, setPassword] = useState();
 
 
     const pegarDados = (nome, email, senha) => {
@@ -61,6 +61,7 @@ function Cadastro () {
             }
      
     }
+    
 
     const getStatus = (status) =>{
         if(status === 'Created'){
@@ -71,49 +72,63 @@ function Cadastro () {
 
 
     return(
-        <div className="formLogin"> 
-            
-            <div className="item foto">
-                <img src="https://consultoriaprebianchi.com.br/wp-content/uploads/2021/05/Lei-Geral-de-Prote%C3%A7%C3%A3o-de-Dados.png" alt="" />
-            </div>
-            <div className="item login">
-                <h1>
-                    WELCOME
-                </h1>
-                <h2>cadstrar-se!</h2>
-                <form >
-                        <div className="nome div-input" >
-                            <input type="text"         
-                                placeholder="Nome"
-                                required
-                                value={nome}
-                                onChange={(e) => setNome(e.target.value)}
-                            />
-                        </div>
-                        <div className="email div-input" >
-                        <img className="gmail" src="https://img.icons8.com/neon/96/null/experimental-filled-message-neon.png"/>        
-                            <input type="email"         
-                                placeholder="Email"
-                                required
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                            />
-                        </div>
-                        <div className="password div-input">
-                        <img className="key" src="https://img.icons8.com/ultraviolet/40/null/password.png"/>
-                            <input type="password" 
-                                placeholder="Senha"
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)}
-                            />
-                        </div>  
-                        <div className="div-entrar">
-                            <input type="button" className="entrar"  value={'cadstrar'} onClick={cadastrar}/>
-                        </div>  
-                        <div className="div-input">
-                            <p>já tem cadastro faça login? <Link to='/' >faça login </Link></p>
-                        </div>                 
-                </form>
+        <div style={
+            {
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                width: '100%',
+                height: '100vh' ,
+                backgroundColor : '#866AE3'
+                
+            }
+        }>
+
+
+            <div className="formLogin"> 
+                
+                <div className="item foto">
+                    <img src="https://consultoriaprebianchi.com.br/wp-content/uploads/2021/05/Lei-Geral-de-Prote%C3%A7%C3%A3o-de-Dados.png" alt="" />
+                </div>
+                <div className="item login">
+                    <h1>
+                        WELCOME
+                    </h1>
+                    <h2>cadstrar-se!</h2>
+                    <form >
+                            <div className="nome div-input" >
+                                <input type="text"         
+                                    placeholder="Nome"
+                                    required
+                                    value={nome}
+                                    onChange={(e) => setNome(e.target.value)}
+                                />
+                            </div>
+                            <div className="email div-input" >
+                            <img className="gmail" src="https://img.icons8.com/neon/96/null/experimental-filled-message-neon.png"/>        
+                                <input type="email"         
+                                    placeholder="Email"
+                                    required
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
+                                />
+                            </div>
+                            <div className="password div-input">
+                            <img className="key" src="https://img.icons8.com/ultraviolet/40/null/password.png"/>
+                                <input type="password" 
+                                    placeholder="Senha"
+                                    value={password}
+                                    onChange={(e) => setPassword(e.target.value)}
+                                />
+                            </div>  
+                            <div className="div-entrar">
+                                <input type="button" className="entrar"  value={'cadstrar'} onClick={cadastrar}/>
+                            </div>  
+                            <div className="div-input">
+                                <p>já tem cadastro faça login? <Link to='/' >faça login </Link></p>
+                            </div>                 
+                    </form>
+                </div>
             </div>
         </div>
     )
