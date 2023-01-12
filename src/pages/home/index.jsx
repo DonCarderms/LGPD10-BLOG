@@ -5,8 +5,9 @@ import './style.css'
 import Post from "../../componentes/Post";
 import Header from "../../componentes/header";
 import Footer from "../../componentes/Footer";
+import { GerarToken } from "../login";
 
-function Home (props) {
+function Home () {
 
     const goToLogin = () => window.location.href=`http://localhost:3001`;
 
@@ -14,13 +15,8 @@ function Home (props) {
     const existTokenLogado = localStorage.getItem('logado')
     const user = sessionStorage.getItem('user')
     
+    const [postagens, setPostagens] = useState([]) 
    
-
-    if(window.location.href.split('/')[3].split('?')[1]){
-         console.log(window.location.href.split('/')[3].split('?')[1].split('=')[1])
-    }else{
-      goToLogin()
-    }
     
 useEffect(() => {
 
@@ -39,28 +35,56 @@ useEffect(() => {
         username  = localStorage.getItem('user')
     }
 
+
+
+    useEffect(() => {
+        fetch('http://localhost:3000/postagens')
+        .then((response) => response.json())
+        .then((reponse) => {  
+            setPostagens(reponse)
+        })
+    }, [])
+
     return(
         <div id="container">
-            <Header titulo='LGPD BLOG' background='#656598'/>
-            <div className="Posts">
-                 <Post titulo={'Title of post'} contenu='contenu...' comments={789}/>
-                 <Post titulo={'Title of post'} contenu='contenu...' comments={1}/>
-                 <Post titulo={'Title of post'} contenu='contenu...' comments={0}/>
-                 <Post titulo={'Title of post'} contenu='contenu...'/>
-                 <Post titulo={'Title of post'} contenu='contenu...'/>
-                 <Post titulo={'Title of post'} contenu='contenu...'/>
-                 <Post titulo={'Title of post'} contenu='contenu...'/>
-                 <Post titulo={'Title of post'} contenu='contenu...'/>
-                 <Post titulo={'Title of post'} contenu='contenu...'/>
-                 <Post titulo={'Title of post'} contenu='contenu...'/>
-
+            <Header titulo='LGPD BLOG' background='#656598' heigth={'0px'}/>
+            <div style={{marginTop : '65px'}}> 
+                <h2 className="postagens">Postagens recentes </h2>      
 
             </div>
+            <div className="Posts">
+                
+                    {
+                        postagens.map((post, i) => {
+                            return(<Post key={i} titulo={post.titulo} autor={post.autor_id} maxwidth="800px"/>)                               
+                        })
+                    } 
+                    {
+                        postagens.map((post, i) => {
+                            return(<Post key={i} titulo={post.titulo} autor={post.autor_id} maxwidth="800px"/>)                               
+                        })
+                    } 
+                    {
+                        postagens.map((post, i) => {
+                            return(<Post key={i} titulo={post.titulo} autor={post.autor_id} maxwidth="800px"/>)                               
+                        })
+                    } 
+                    {
+                        postagens.map((post, i) => {
+                            return(<Post key={i} titulo={post.titulo} autor={post.autor_id} maxwidth="800px"/>)                               
+                        })
+                    } 
+                                       
+            </div>
+
+            <GerarToken/>
          
             <Footer />
         </div>
        
     )
 }
+
+
 
 export default Home;

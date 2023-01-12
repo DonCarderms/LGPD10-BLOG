@@ -89,13 +89,6 @@
   ],
   "postagens": [
     {
-      "id": 0,
-      "autor_id": "",
-      "categoria_id": 1,
-      "titulo": "basaska",
-      "conteudo": "bla bla bla"
-    },
-    {
       "autor_id": "0",
       "categoria_id": "1",
       "titulo": "What is Lorem Ipsum?",
@@ -122,6 +115,13 @@
       "titulo": "Ut aliquet facilisis tortor",
       "conteudo": "Ut aliquet facilisis tortor, a suscipit sapien egestas scelerisque. Donec placerat tortor elit, eu posuere est suscipit sit amet. Ut leo massa, interdum sit amet diam ut, malesuada feugiat felis. Quisque in ultrices lorem. Phasellus bibendum malesuada lacus, nec viverra turpis convallis rutrum. Nam dignissim, velit ut blandit molestie, eros erat sollicitudin augue, efficitur viverra ligula lectus sit amet risus. Nulla efficitur quam eget enim ultrices maximus. Vestibulum fringilla diam libero, ut euismod nulla consectetur nec. Morbi sapien felis, maximus at metus eu, accumsan gravida sem.",
       "id": 4
+    },
+    {
+      "autor_id": "1",
+      "categoria_id": 0,
+      "titulo": "Alice encontra coração novo inesperado em sua jornada de descoberta",
+      "conteudo": "Alice, uma jovem aventureira, estava em uma jornada de descoberta em busca de seu verdadeiro propósito na vida. Desde o início de sua jornada, ela foi forçada a enfrentar muitos desafios, aprender lições difíceis e passar por muitas experiências inesperadas.\n\nNo entanto, durante a jornada, ela acabou descobrindo algo de que nunca esperou: um novo coração. Uma vez que ela absorveu essa descoberta, ela entendeu que ainda havia muito a ser descobrir sobre sua própria identidade.\n\nAgora, ela se esforça para descobrir como usar seu novo coração em benefício próprio, aproveitar o novo conhecimento e se conectar com seu verdadeiro propósito. O que ela conseguirá descobrir em sua jornada de autodescoberta? Talvez seja algo que ela jamais poderia imaginar.",
+      "id": 7
     }
   ],
   "comentarios": [

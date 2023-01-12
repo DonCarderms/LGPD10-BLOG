@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from "react";
 import { BrowserRouter as Router, Switch, Routes, Route , Link} from 'react-router-dom';
+import jwtDecode  from 'jwt-decode';
 import './login.css'
+
 
 
 
@@ -24,10 +26,10 @@ function Login () {
     const logar = () => {
         const emailInput = email
 
+
         fetch('http://localhost:3000/administrador')
         .then((reponse) => reponse.json())
         .then((reponse) => {
-             console.log(reponse) 
              const [{email, senha}] = reponse
              if(emailInput === email && password === senha){
                 const adminToken = geradorDeToken(50)
@@ -40,14 +42,17 @@ function Login () {
         .then((reponse) => reponse.json())
         .then((reponse) => {
              console.log(reponse) 
-             const [{email, senha, nome, id}] = reponse
-             if(emailInput === email && password === senha){
-                const autorTken = geradorDeToken(50)
-                localStorage.setItem('autor', nome )
-                localStorage.setItem('autorId', id )
-                sessionStorage.setItem('autorSession', autorTken)
-                window.location.href=`http://localhost:3001/autor`;
-             }
+             console.log(reponse.filter((autor) => {
+                if(autor.email === email && autor.senha === password){
+                    const autorTken = geradorDeToken(50)
+                    localStorage.setItem('autor', autor.nome )
+                    localStorage.setItem('autorId', autor.id )
+                    sessionStorage.setItem('autorSession', autorTken)
+                    window.location.href=`http://localhost:3001/autor`;
+                }
+                           
+                }))
+          
             })
 
 
@@ -57,12 +62,12 @@ function Login () {
                 const [...user] = reponse
                 const loginVerificado = user.filter(element => element.email === emailInput && element.senha === password) 
     
-                const [{id,nome, email, senha,}] = loginVerificado
+                const [{id, nome, email, senha,}] = loginVerificado
                 console.log(email, senha)
                 if(loginVerificado.length === 1){
                    const userSession = geradorDeToken(50)
                    sessionStorage.setItem('userSession', userSession)
-                   window.location.href=`http://localhost:3001/home?user=${id}`;
+                   window.location.href=`http://localhost:3001/home`;
                    pegarDadosDoLogin({nome, id})
                 }
 
@@ -92,6 +97,8 @@ function Login () {
                 
                 <div className="item foto">
                     <img src="https://consultoriaprebianchi.com.br/wp-content/uploads/2021/05/Lei-Geral-de-Prote%C3%A7%C3%A3o-de-Dados.png" alt="" />
+
+              
                 </div>
                 <div className="item login">
                     
@@ -130,6 +137,19 @@ function Login () {
         </div>
     )
 
+}
+
+
+
+export const GerarToken = () => {
+    
+    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiRG9uY2FyZGVybXMiLCJhZG1pbiI6dHJ1ZSwiaWF0IjoxNjczNTQxMTIxfQ.lhvlp0XoHMMhM7vp5BhBWI9wghxW9WIWHlh7D9NCsUc'
+    console.log(jwtDecode(token))
+    return(
+        <div>
+           
+        </div>
+    )
 }
 
 export default Login;

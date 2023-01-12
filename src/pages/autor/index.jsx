@@ -7,13 +7,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Header from "../../componentes/header";
 import Post from "../../componentes/Post";
 import Footer from "../../componentes/Footer";
+import { Foot } from "../home/index";
 
 import './style.css'
 
 
 function Autor() {
     const existToken = sessionStorage.getItem('autorSession')
-    const existTokenLogado = localStorage.getItem('')
+    const existTokenLogado = localStorage.getItem('autorLogado')
 
     const autor = localStorage.getItem('autor')
     const autorId = localStorage.getItem('autorId')
@@ -39,7 +40,7 @@ function Autor() {
    const postContenuSize = () => postContenu.length
 
     const salvarPost = (e) => {
-        e.preventDefault()
+        // e.preventDefault()
            const dados = post(autorId, categoria_id, postTitle, postContenu)
           
            if( 
@@ -82,19 +83,29 @@ function Autor() {
         })
     }, [])
     
+    if (!existToken && !existTokenLogado) {
+        window.location.href = `http://localhost:3001`;
+    } else {
+        localStorage.setItem('autorLogado', existToken)
+    }
     
     const logout = () => {
-        
+        sessionStorage.clear('autorSession')
+        localStorage.clear('autorLogado')
+        window.location.href = `http://localhost:3001`;
     }
     
     return (
         <div className="div-app">
             <Header titulo='LGPD BLOG' background='#656598' user={autor}/>
+             <button className="bt-sair" onClick={logout}>
+               <img width={20} src="https://img.icons8.com/ios-filled/50/null/logout-rounded-left.png"/>
+             </button>
             <div style={{padding : '20px'}}>
                 
                 <div className="post-autor">
                         <div className="container">
-                            <form >
+                            <form>
                                 <label htmlFor="fname">Título do Post</label>
                                 <input 
                                   type="text"
@@ -132,17 +143,18 @@ function Autor() {
                     {
                         postagens.map((post, i) => {
                             return(
-                                
-                                    <Post key={i} titulo={post.titulo}/>              
+                                <div>
+                                    <Post key={i} titulo={post.titulo} maxwidth='900px'/>  
+                                </div>
+                                            
                             )
                                
                         
                         })
                     } 
                     
-
                     
-                <br /><br />
+                <br/><br/>
                 </div>
                
                     <Footer />

@@ -87,10 +87,15 @@ body {
   }
 
   .Posts{ 
+    position: fixed;
     margin: auto;
-    margin-top: 200px;
-    max-width: 1200px; 
-    height: 800px;
+    margin-top: 10px;
+    width: 100%;
+    height: 730px;
+    overflow-y: scroll;
+    text-align: -webkit-center;
   }
 
-  
+  /* .postagens{
+   margin-top: 100px;
+  } */

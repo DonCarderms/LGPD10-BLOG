@@ -10,12 +10,12 @@ function Footer () {
             justifyContent : 'center',
             bottom: '0',
             left: '0',
-            height: '40px',
+            height: '10px',
             position: 'fixed',
             width: '100%'
          }}
          >
-            <h2>Copy © 2023 Blog LGPD</h2>
+            <h3>Copy © 2023 Blog LGPD</h3>
          </div>
     )
 } 
