@@ -145,7 +145,7 @@ function Login () {
 export const GerarToken = () => {
     
     const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiRG9uY2FyZGVybXMiLCJhZG1pbiI6dHJ1ZSwiaWF0IjoxNjczNTQxMTIxfQ.lhvlp0XoHMMhM7vp5BhBWI9wghxW9WIWHlh7D9NCsUc'
-    console.log(jwtDecode(token))
+    // console.log(jwtDecode(token))
     return(
         <div>
            

@@ -57,25 +57,12 @@ const  Postagem =()=>{
 
 
 export const Comentario =({id_postagem, user_id})=>{
+
+
    const [comment, setComment] = useState('')
    const [comments, setComments] = useState([])
 
-  const [user_name, setUser_name] = useState('')
-
-   const buscarUsercomments =(id)=> {
-    fetch(`http://localhost:3000/user/${Number(id)}`, {
-        method : 'GET',
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        }   
-        })
-        .then((reponse) => reponse.json())
-        .then((reponse) => setUser_name(reponse.nome))   
-   } 
-
   
- 
  
    const pegarDados = (user, post, contenu) =>{
             return{
@@ -152,10 +139,10 @@ export const Comentario =({id_postagem, user_id})=>{
                 <div>
                     {
                         comments.map((comment, i) => {
+
                            return(
                                 <div className="div-comments" key={i}>
                                     <p >{comment.conteudo}</p>
-                                    <p >{comments.user_id}</p>
                                 </div>
                             )
                         })
