@@ -140,8 +140,7 @@ function Admin() {
         }
     }
 
-
-
+    
     const logout = () => {
         if (existToken && existTokenLogado) {
             sessionStorage.clear();

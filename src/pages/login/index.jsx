@@ -67,6 +67,7 @@ function Login () {
                 if(loginVerificado.length === 1){
                    const userSession = geradorDeToken(50)
                    sessionStorage.setItem('userSession', userSession)
+                   localStorage.setItem('user_id', id)
                    window.location.href=`http://localhost:3001/home`;
                    pegarDadosDoLogin({nome, id})
                 }

@@ -56,24 +56,13 @@ useEffect(() => {
                 
                     {
                         postagens.map((post, i) => {
-                            return(<Post key={i} titulo={post.titulo} autor={post.autor_id} maxwidth="800px"/>)                               
+                            return(
+                                    <Link to={`/Postagem?${post.id}`} >
+                                         <Post key={i} titulo={post.titulo} autor={post.autor_id} maxwidth="800px" id_postagem={post.id}/>
+                                    </Link>
+                                 )                               
                         })
-                    } 
-                    {
-                        postagens.map((post, i) => {
-                            return(<Post key={i} titulo={post.titulo} autor={post.autor_id} maxwidth="800px"/>)                               
-                        })
-                    } 
-                    {
-                        postagens.map((post, i) => {
-                            return(<Post key={i} titulo={post.titulo} autor={post.autor_id} maxwidth="800px"/>)                               
-                        })
-                    } 
-                    {
-                        postagens.map((post, i) => {
-                            return(<Post key={i} titulo={post.titulo} autor={post.autor_id} maxwidth="800px"/>)                               
-                        })
-                    } 
+                    }                   
                                        
             </div>
 

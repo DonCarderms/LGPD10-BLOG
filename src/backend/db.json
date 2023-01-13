@@ -85,51 +85,137 @@
     {
       "nome": "series e filmes",
       "id": 3
+    },
+    {
+      "nome": "tecnologia",
+      "id": 4
     }
   ],
   "postagens": [
-    {
-      "autor_id": "0",
-      "categoria_id": "1",
-      "titulo": "What is Lorem Ipsum?",
-      "conteudo": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing",
-      "id": 1
-    },
-    {
-      "autor_id": "0",
-      "categoria_id": "1",
-      "titulo": "Why do we use it?",
-      "conteudo": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).\n",
-      "id": 2
-    },
-    {
-      "autor_id": "0",
-      "categoria_id": "1",
-      "titulo": "Where can I get some?",
-      "conteudo": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.",
-      "id": 3
-    },
-    {
-      "autor_id": "0",
-      "categoria_id": 0,
-      "titulo": "Ut aliquet facilisis tortor",
-      "conteudo": "Ut aliquet facilisis tortor, a suscipit sapien egestas scelerisque. Donec placerat tortor elit, eu posuere est suscipit sit amet. Ut leo massa, interdum sit amet diam ut, malesuada feugiat felis. Quisque in ultrices lorem. Phasellus bibendum malesuada lacus, nec viverra turpis convallis rutrum. Nam dignissim, velit ut blandit molestie, eros erat sollicitudin augue, efficitur viverra ligula lectus sit amet risus. Nulla efficitur quam eget enim ultrices maximus. Vestibulum fringilla diam libero, ut euismod nulla consectetur nec. Morbi sapien felis, maximus at metus eu, accumsan gravida sem.",
-      "id": 4
-    },
     {
       "autor_id": "1",
       "categoria_id": 0,
       "titulo": "Alice encontra coração novo inesperado em sua jornada de descoberta",
       "conteudo": "Alice, uma jovem aventureira, estava em uma jornada de descoberta em busca de seu verdadeiro propósito na vida. Desde o início de sua jornada, ela foi forçada a enfrentar muitos desafios, aprender lições difíceis e passar por muitas experiências inesperadas.\n\nNo entanto, durante a jornada, ela acabou descobrindo algo de que nunca esperou: um novo coração. Uma vez que ela absorveu essa descoberta, ela entendeu que ainda havia muito a ser descobrir sobre sua própria identidade.\n\nAgora, ela se esforça para descobrir como usar seu novo coração em benefício próprio, aproveitar o novo conhecimento e se conectar com seu verdadeiro propósito. O que ela conseguirá descobrir em sua jornada de autodescoberta? Talvez seja algo que ela jamais poderia imaginar.",
+      "id": 1
+    },
+    {
+      "autor_id": "1",
+      "categoria_id": 0,
+      "titulo": "1914 translation by H. Rackham",
+      "conteudo": "\"On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains.\"",
+      "id": 2
+    },
+    {
+      "autor_id": "1",
+      "categoria_id": 0,
+      "titulo": "1914 translation by H. Rackham",
+      "conteudo": "\"But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?\"",
+      "id": 3
+    },
+    {
+      "autor_id": "1",
+      "categoria_id": 0,
+      "titulo": "Section 1.10.32 of \"de Finibus Bonorum et Malorum\", written by Cicero in 45 BC",
+      "conteudo": "\"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?\"",
+      "id": 4
+    },
+    {
+      "autor_id": "1",
+      "categoria_id": 0,
+      "titulo": "The standard Lorem Ipsum passage, used since the 1500s",
+      "conteudo": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\"",
+      "id": 5
+    },
+    {
+      "autor_id": "2",
+      "categoria_id": 0,
+      "titulo": "Identificação de Conceitos e Atributos",
+      "conteudo": "\nExercício 1: Deseja-se construir um sistema para manter um registro de artistas\nmusicais e seus álbuns. Cada álbum possui várias músicas, as quais poderão ser\nconsultadas pelo sistema. O sistema também deve permitir a busca de artistas por\nnome ou nacionalidade. O sistema também deve ser capaz de exibir um relatório\ndos álbuns de um artista, o qual pode ser ordenado por nome, ano, ou duração total\ndo álbum. Um álbum pode ter a participação de vários artistas, sem distinção. Já a\nmúsica pode possuir um ou mais autores e intérpretes (todos considerados artistas).\nExercício 2: Deseja-se construir um sistema para gerenciar as informações de\ncampeonatos de handebol, que ocorrem todo ano. Deseja-se saber nome, data de\nnascimento, gênero e altura dos jogadores de cada time, bem qual deles é o capitão\nde cada time. Cada partida do campeonato ocorre em um estádio, que possui nome\ne endereço. Cada time possui seu estádio-sede e, assim, cada partida possui um\ntime mandante (anfitrião) e o time visitante. O sistema deve ser capaz de listar as\npartidas já ocorridas e não ocorridas de um campeonato. O sistema deve também\nser capaz de listar a tabela do campeonato, ordenando os times por classificação,\nque é calculada em primeiro lugar por saldo de\nvitórias e em segundo lugar por saldo de gols.\nExercício 3: Deseja-se fazer um sistema de rede social. Nesta rede social, os\nusuários podem seguir e ser seguidos por outros usuários. O perfil do usuário deve\npermitir cadastrar nome, email, data de nascimento, website, gênero, telefone e foto\ndo perfil. Os usuários podem fazer postagens de texto em sua própria \"linha do\ntempo\" (timeline) da rede social, sendo que podem anexar também fotos às\npostagens. Uma foto é referenciada pela URI de seu local de armazenamento. As\nfotos podem ser organizadas em álbuns, sendo que cada álbum possui um título.",
+      "id": 6
+    },
+    {
+      "autor_id": "0",
+      "categoria_id": "4",
+      "titulo": "Tesla reduz preços nos EUA e na Europa em até 20%",
+      "conteudo": "A Tesla está cortando preços em toda a Europa e nos EUA. A Reuters relata que os preços do Modelo Y com tração traseira caíram 17% na Alemanha, com cortes de 20% para o Modelo Y de longo alcance nos EUA. A Tesla também cortou os preços de seu Modelo X e Modelo S nos EUA. Os cortes de preços chegam menos de um ano depois que a Tesla fez vários aumentos de preços em 2022.\n\n“No final de um ano turbulento com interrupções na cadeia de suprimentos, conseguimos uma normalização parcial da inflação de custos, o que nos dá confiança para repassar esse alívio aos nossos clientes”, disse um porta-voz da Tesla Alemanha em comunicado à Reuters .\n\nAs mudanças de hoje colocam os preços do Modelo 3 e do Modelo Y abaixo do preço listado antes dos grandes aumentos iniciais de preços da Tesla, quase um ano atrás. O pesquisador de EV Troy Teslike compilou uma lista mostrando as mudanças de preço nos EUA, com o modelo Y de longo alcance agora $ 13.000 mais barato antes do crédito fiscal e $ 20.500 mais barato incluindo o crédito. Isso é um desconto de 31% no total após o crédito fiscal.",
       "id": 7
+    },
+    {
+      "autor_id": "0",
+      "categoria_id": "4",
+      "titulo": "Nvidia Broadcast agora pode fazer deepfake em seus olhos para fazer você olhar para a câmera",
+      "conteudo": "O software de streaming da Nvidia agora tem a opção de fazer parecer que você está fazendo contato visual com a câmera, mesmo que esteja olhando para outro lugar na vida real. Usando AI, o recurso “Eye Contact” adicionado ao Nvidia Broadcast 1.4 substituirá seus olhos por olhos “simulados” que estão alinhados com sua câmera – um efeito que funcionou muito bem quando nós mesmos o testamos, exceto por todas as vezes que não funcionou. t.\n\nEm uma postagem de anúncio , a empresa escreve que o recurso é destinado a “criadores de conteúdo que procuram se gravar enquanto lêem suas anotações ou um roteiro” sem ter que olhar diretamente para a câmera. Apresentá-lo como algo que você usaria durante uma apresentação pública, em vez de algo que você usaria socialmente, evita os dilemas que acompanham esse tipo de tecnologia. É rude usar IA para enganar minha mãe e fazê-la pensar que estou participando de nossa videochamada quando, na verdade, estou olhando para o meu telefone? Ou fazer meu chefe pensar que não estou escrevendo um artigo em meu outro monitor durante uma reunião? (Vou dizer que sim, já que ser pego em qualquer um dos cenários me colocaria em maus lençóis.)\n\nA Nvidia sugere que o Eye Contact tentará fazer com que seus olhos simulados correspondam à cor dos seus olhos reais, e há “até mesmo um recurso de desconexão caso você olhe muito longe”.\n\nAqui está uma demonstração lado a lado com um fluxo não editado, para que você possa comparar como meus olhos estão realmente se movendo e como o software da Nvidia os renderiza:",
+      "id": 8
+    },
+    {
+      "autor_id": "0",
+      "categoria_id": "4",
+      "titulo": "Os funcionários da Microsoft estão tendo folga ilimitada",
+      "conteudo": "A Microsoft está dando folga ilimitada a seus funcionários americanos. O anúncio foi feito em um e-mail aos funcionários de Kathleen Hogan, diretora de pessoal da Microsoft, hoje em um memorando visto pelo The Verge . A Microsoft está chamando sua folga ilimitada de “Folga Discricionária” e se aplicará a todos os funcionários assalariados dos EUA.\n\n“Como, quando e onde fazemos nosso trabalho mudou drasticamente”, explica Hogan no memorando interno. “E conforme nos transformamos, modernizar nossa política de férias para um modelo mais flexível foi o próximo passo natural.”\n\nAs mudanças começarão em 16 de janeiro e significam que até mesmo os novos funcionários da Microsoft não precisam mais esperar para acumular férias. A Microsoft oferecerá 10 feriados corporativos, licenças, folgas por doença e problemas de saúde mental e tempo ausente para serviço de júri ou luto juntamente com esta nova política de folga ilimitada. Os funcionários que tiverem um saldo de férias não utilizado receberão um pagamento único em abril.",
+      "id": 9
     }
   ],
   "comentarios": [
     {
-      "id": 0,
-      "user_id": 0,
-      "postagem_id": 0,
-      "conteudo": "bla bla bla"
+      "user_id": "1",
+      "postagem_id": "1",
+      "conteudo": "conteudo legal.  😁",
+      "id": 1
+    },
+    {
+      "user_id": "0",
+      "postagem_id": "1",
+      "conteudo": "gostei do conteudo.  👍",
+      "id": 2
+    },
+    {
+      "user_id": "1",
+      "postagem_id": "2",
+      "conteudo": "legal",
+      "id": 4
+    },
+    {
+      "user_id": "1",
+      "postagem_id": "4",
+      "conteudo": "conteudo legal!!!",
+      "id": 5
+    },
+    {
+      "user_id": "1",
+      "postagem_id": "3",
+      "conteudo": "ouauuu muito bom",
+      "id": 6
+    },
+    {
+      "user_id": "1",
+      "postagem_id": "6",
+      "conteudo": "boas conceitos",
+      "id": 7
+    },
+    {
+      "user_id": "1",
+      "postagem_id": "5",
+      "conteudo": " que conteudo sem teto antigão ☹️",
+      "id": 8
+    },
+    {
+      "user_id": "1",
+      "postagem_id": "7",
+      "conteudo": "boa elon musk",
+      "id": 9
+    },
+    {
+      "user_id": "1",
+      "postagem_id": "8",
+      "conteudo": "o placa de video dos meus sonhos  😊",
+      "id": 10
+    },
+    {
+      "user_id": "1",
+      "postagem_id": "9",
+      "conteudo": " queria trabalhar lá",
+      "id": 11
     }
   ]
 }

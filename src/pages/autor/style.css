@@ -3,26 +3,32 @@
 }
 
 .post-autor {
-    height: 279px;
+    height: 350px;
     background-color: #f1f1f1;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
     max-width: 900px;
     margin: auto;
-    margin-top: 100px;
+    margin-top: 60px;
     box-shadow: 3px 3px 5px #999;
     margin-bottom: 20px;
   }
   #fname{
-    max-width: 800px;
+    margin: auto;
   }
  #fname, textarea {
     width: 100%;
+    max-width: 800px;
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 4px;
     resize: vertical;
+  }
+  
+  textarea{
+    height: 65px;
+
   }
   
   .container {
@@ -48,7 +54,7 @@
     position: fixed;
     max-width:1720px;
     margin: auto;
-    height: 400px;
+    height: 300px;
     overflow-y: scroll;
     text-align: -webkit-center;
 }
@@ -56,8 +62,19 @@
     background-color: rgba(255, 255, 255, 0.452);
 }
 .bt-sair{
+  top: -13px;
+  right: 205px;
   margin: 20px;
-  position: fixed;
+  position: absolute;
   border: 0;
   border-radius: 30px;
+}
+select, option{
+  padding: 10px 20px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+@media screen and (max-width : 930) {
+   
 }

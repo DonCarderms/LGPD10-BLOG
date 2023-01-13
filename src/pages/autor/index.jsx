@@ -97,7 +97,7 @@ function Autor() {
     
     return (
         <div className="div-app">
-            <Header titulo='LGPD BLOG' background='#656598' user={autor}/>
+            <Header titulo='LGPD BLOG' background='#656598' user={autor} heigth='10px'/>
              <button className="bt-sair" onClick={logout}>
                <img width={20} src="https://img.icons8.com/ios-filled/50/null/logout-rounded-left.png"/>
              </button>
@@ -106,15 +106,17 @@ function Autor() {
                 <div className="post-autor">
                         <div className="container">
                             <form>
-                                <label htmlFor="fname">Título do Post</label>
-                                <input 
-                                  type="text"
-                                   id="fname" 
-                                   name="title" 
-                                   placeholder="Digite o título do post" 
-                                   value={postTitle}
-                                   onChange={(e) => {setPostTitle(e.target.value)}}
-                                />
+                                <div className="">
+                                    <label htmlFor="fname">Título do Post</label>
+                                    <input 
+                                    type="text"
+                                    id="fname" 
+                                    name="title" 
+                                    placeholder="Digite o título do post" 
+                                    value={postTitle}
+                                    onChange={(e) => {setPostTitle(e.target.value)}}
+                                    />
+                                </div>
                                 <label htmlFor="lname">Conteúdo do Post</label>
                                 <textarea 
                                   name="content" 
@@ -144,7 +146,7 @@ function Autor() {
                         postagens.map((post, i) => {
                             return(
                                 <div>
-                                    <Post key={i} titulo={post.titulo} maxwidth='900px'/>  
+                                    <Post key={i} titulo={post.titulo} maxwidth='900px' autor={autorId}/>  
                                 </div>
                                             
                             )
