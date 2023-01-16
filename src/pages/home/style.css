@@ -96,6 +96,10 @@ body {
     text-align: -webkit-center;
   }
 
-  /* .postagens{
-   margin-top: 100px;
-  } */
+.btnsPage button{
+  margin: 8px;
+  border-radius: 25px;
+}
+.Post:hover {
+  background-color: #444;
+}

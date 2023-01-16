@@ -25,8 +25,9 @@ function Autor() {
     const [categories, setCategories] = useState([])
     const [categoria_id, setCategoria_id] = useState(0)
 
-    const [postagens, setPostagens] = useState([]) 
+    const [saveState, setSaveState] = useState(false)
 
+    const [postagens, setPostagens] = useState([]) 
 
     const post = (autor, categoria, titulo, conteudo) =>{
         return{
@@ -40,7 +41,7 @@ function Autor() {
    const postContenuSize = () => postContenu.length
 
     const salvarPost = (e) => {
-        // e.preventDefault()
+        e.preventDefault()
            const dados = post(autorId, categoria_id, postTitle, postContenu)
           
            if( 
@@ -59,6 +60,7 @@ function Autor() {
                 })
                 .then((reponse) => {
                     console.log(reponse)
+                    setSaveState(true)
                 })
             }
 
@@ -81,7 +83,7 @@ function Autor() {
         .then((reponse) => {  
             setPostagens(reponse.filter(post => post.autor_id === autorId))
         })
-    }, [])
+    }, [saveState])
     
     if (!existToken && !existTokenLogado) {
         window.location.href = `http://localhost:3001`;
@@ -145,8 +147,9 @@ function Autor() {
                     {
                         postagens.map((post, i) => {
                             return(
-                                <div>
-                                    <Post key={i} titulo={post.titulo} maxwidth='900px' autor={autorId}/>  
+                                <div key={i}>
+                                    
+                                    <Post titulo={post.titulo} maxwidth='900px' autor={autorId} id_postagem={post.id}/>  
                                 </div>
                                             
                             )

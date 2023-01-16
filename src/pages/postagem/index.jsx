@@ -14,15 +14,22 @@ const  Postagem =()=>{
     const url = window.location.search
     const id_postagem = url.split('?')[1]
 
-    useEffect(() => {
+    
+    useEffect(() =>{
+        
         fetch(`http://localhost:3000/postagens/${id_postagem}`, {
             method : 'GET',
+            headers : {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }
         })
         .then((reponse) => reponse.json())
         .then((reponse) => {
             setPostagem(reponse)
         })
     }, [])
+
 
 
 
@@ -62,8 +69,6 @@ export const Comentario =({id_postagem, user_id})=>{
    const [comment, setComment] = useState('')
    const [comments, setComments] = useState([])
 
-  
- 
    const pegarDados = (user, post, contenu) =>{
             return{
                 user_id : user,
@@ -73,9 +78,13 @@ export const Comentario =({id_postagem, user_id})=>{
                     
    }
 
-   const enviar = (e) =>{
+ 
+
+   const enviar = (e) =>{  
+        e.preventDefault()
+        
         const dados = pegarDados(user_id, id_postagem, comment)
-             e.preventDefault()
+            
 
         if(
             dados.user_id !== '' &&
@@ -130,7 +139,7 @@ export const Comentario =({id_postagem, user_id})=>{
                         <input 
                         className="enviar_bt"
                         type="submit" 
-                        value={'enviar'}
+                        value={'comentar'}
                         onClick={(e) => enviar(e)}
                         />
                   
@@ -142,6 +151,9 @@ export const Comentario =({id_postagem, user_id})=>{
 
                            return(
                                 <div className="div-comments" key={i}>
+
+                                        <GetUserName user_id={comment.user_id}/>
+                                   
                                     <p >{comment.conteudo}</p>
                                 </div>
                             )
@@ -150,6 +162,27 @@ export const Comentario =({id_postagem, user_id})=>{
                 </div>
             </div>
     )
+}
+
+export const GetUserName = ({user_id}) => {
+
+       const  [userName, setUserName] = useState('')
+
+        fetch(`http://localhost:3000/user/${user_id}`, {
+            method : 'GET',
+            headers : {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }
+        }).then((res) => res.json())
+        .then((res) =>setUserName(res.nome))
+
+        return(
+                <h5 className="userName">
+                
+                    {userName}
+                </h5>           
+        )
 }
 
 

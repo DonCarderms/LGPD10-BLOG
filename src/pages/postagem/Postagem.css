@@ -29,6 +29,21 @@
     width: 100%;
     text-align: center;
 }
-.div-comments p{
-    text-align: left;
+.div-comments {
+    display: flex;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px;
+}
+.userName{
+    color: #424274;
+    background: #65659842;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+header{
+    position: relative!important;
 }

@@ -89,6 +89,14 @@
     {
       "nome": "tecnologia",
       "id": 4
+    },
+    {
+      "nome": " Negócios",
+      "id": 5
+    },
+    {
+      "nome": "",
+      "id": 6
     }
   ],
   "postagens": [
@@ -154,6 +162,34 @@
       "titulo": "Os funcionários da Microsoft estão tendo folga ilimitada",
       "conteudo": "A Microsoft está dando folga ilimitada a seus funcionários americanos. O anúncio foi feito em um e-mail aos funcionários de Kathleen Hogan, diretora de pessoal da Microsoft, hoje em um memorando visto pelo The Verge . A Microsoft está chamando sua folga ilimitada de “Folga Discricionária” e se aplicará a todos os funcionários assalariados dos EUA.\n\n“Como, quando e onde fazemos nosso trabalho mudou drasticamente”, explica Hogan no memorando interno. “E conforme nos transformamos, modernizar nossa política de férias para um modelo mais flexível foi o próximo passo natural.”\n\nAs mudanças começarão em 16 de janeiro e significam que até mesmo os novos funcionários da Microsoft não precisam mais esperar para acumular férias. A Microsoft oferecerá 10 feriados corporativos, licenças, folgas por doença e problemas de saúde mental e tempo ausente para serviço de júri ou luto juntamente com esta nova política de folga ilimitada. Os funcionários que tiverem um saldo de férias não utilizado receberão um pagamento único em abril.",
       "id": 9
+    },
+    {
+      "autor_id": "1",
+      "categoria_id": 4,
+      "titulo": "o que faz com que a minha hook useffect ficar em loop infinito",
+      "conteudo": "\n// Um motivo possível é que você não colocou um array de dependências vazio como segundo argumento para sua função useEffect. Isso significa que sempre que qualquer uma das variáveis em seu estado mudar, o useEffect será acionado novamente, o que resulta em um loop infinito. Certifique-se de que seu useEffect tenha um array de dependências como segundo argumento para evitar isso.",
+      "id": 10
+    },
+    {
+      "autor_id": "2",
+      "categoria_id": "4",
+      "titulo": "GPT-4, le bond exponentiel après ChatGPT",
+      "conteudo": "La vitesse à laquelle l’intelligence artificielle (IA) évolue est déjà folle. L’arrivée attendue vers la fin 2023 de GPT-4, la prochaine génération du système qui donne vie aux interfaces ChatGPT et Dall-E, va encore plus accélérer la tendance.\n\nLes gens qui sont déjà essoufflés par les progrès survenus ces derniers mois en matière de compréhension et de génération automatisées du langage naturel sont invités à reprendre leur souffle, le temps de consulter un dictionnaire et de noter la définition du terme « exponentiel ». Car c’est à peu près ce que nous vivons ces jours-ci : une amélioration qui semble être toujours plus rapide des systèmes informatisés mis à la disposition d’à peu près tout le monde.\n\nOù s’arrêteront ces avancées ? Il semble difficile de le prédire. En revanche, on doit déjà penser aux effets pervers que ces systèmes auront sur le quotidien de nombreuses personnes si on ne les encadre pas très rapidement.\n\nIntelligence générale artificielle\n \nCar il faut sur-le-champ empêcher la balloune de gonfler jusqu’à un certain niveau d’éclatement. Rappelons que, malgré les plus récents progrès, les interfaces d’IA qu’on a vues émerger ces derniers mois ne sont pas parfaites. Elles s’approchent un peu de﻿ cet autre concept cher à la recherche informatique, celui d’une intelligence générale artificielle, ou « AGI » selon son acronyme anglophone, mais elles ne s’y apparentent pas encore.\n\nUn tel système, selon la définition acceptée, aurait la forme d’un logiciel auquel on pourrait poser à peu près tout type de problème et qui saurait comment trouver la bonne solution. Une telle IA pourrait en principe effectuer toutes les tâches intellectuelles que les humains sont capables d’accomplir.\n\nÉvidemment, pour y arriver, une telle IA devra être en mesure de faire la distinction entre ce qui est vrai, et pas seulement vraisemblable, et ce qui est faux, même si c’est probable. Idéalement, ses créations, ses oeuvres, devraient être authentiques, et pas seulement un collage de styles ou d’inspirations manifestement repiquées à d’autres. C’est plus apparent du côté du générateur d’images Dall-E, qui est meilleur dans l’imitation du coup de crayon ou de pinceau d’artistes déjà existants qu’il l’est dans le développement de sa propre signature visuelle.\n\nCela dit, la piste est déjà brouillée : sur certains forums Internet où se retrouvent des artistes visuels, on a commencé à bannir des visiteurs dont le style créatif ressemble trop à celui d’une IA. On pourrait voir la même chose survenir dans les écoles plus tard cet hiver, quand les premiers gros travaux seront corrigés, et que des enseignants s’inquiéteront peut-être de lire des travaux qui semblent soudainement plus fouillés qu’à l’habitude.\n\nAutrement dit, même imparfaite, l’IA actuellement accessible par Internet fait déjà sentir sa présence un peu partout. Comme d’habitude, à peu près personne n’était prêt à voir un site Web en apparence tout à fait banal venir transformer radicalement ses habitudes. Surtout pas les gouvernements.\n\nCela serait bien qu’un cadre pour limiter les abus et les travers de l’IA de demain puisse voir le jour… aujourd’hui. Et pas dans cinq ans. L’Europe pourrait adopter son propre cadre l’été prochain.\n\nCe ne sera pas trop tôt, étant donné que la prochaine mise à niveau des Dall-E et ChatGPT de ce monde est attendue au courant de l’année.\n\nGPT-4\n \nMis en ligne au début de décembre 2022, ChatGPT n’a eu besoin que d’une semaine pour secouer l’Internet en entier. Ce logiciel Web repose sur un modèle d’apprentissage machine appelé GPT-3. C’était, à ce moment, la plus récente version du modèle de « Generative Pre-trained Transformer » produit et constamment développé par les chercheurs d’OpenAI, la société à l’origine de ce système.\n\nDans sa compréhension et sa génération de texte ou de langage, le système GPT-3 traite l’information qu’il reçoit à partir de 175 milliards de critères différents. C’est énorme ! C’est d’ailleurs un problème grave de cette technologie : elle est extrêmement énergivore.\n\nPourtant, ce n’est rien à côté de ce que sera GPT-4, son itération suivante. Selon ce que les dirigeants d’OpenAI ont indiqué dernièrement, GPT-4 pourrait traiter l’information en fonction d’un nombre de critères que les rumeurs situent entre 1 et 100 billions (soit entre 1000 et 100 000 milliards de critères).\n\nCe système sera beaucoup plus puissant ; il lira presque dans nos pensées !\n\nIl pourrait mieux comprendre nos intentions derrière les questions qu’on lui pose, sans qu’elles soient explicites. Il pourrait aussi répondre d’une façon plus naturelle encore, ou en tout cas, capable de mieux imiter une conversation humaine.\n\nOpenAI connaît les limites de sa technologie et pourrait inclure dans GPT-4 des garde-fous qui limiteront la capacité de l’IA à inventer des faussetés. Cela pourrait prendre la forme d’algorithmes d’apprentissage par renforcement prenant davantage en compte la réaction des utilisateurs.\n\nCar, oui, l’interaction avec les humains permet à la machine de s’améliorer. Pris à l’envers, cela signifie que, chaque fois que nous nous amusons avec Dall-E ou ChatGPT, nous contribuons à l’accélération du développement d’une machine qui nous remplacera sans doute un jour dans de nombreuses tâches du quotidien.\n\nEt cela devrait arriver en 2023…\n\n",
+      "id": 18
+    },
+    {
+      "autor_id": "2",
+      "categoria_id": "1",
+      "titulo": "Novo recurso do WhatsApp promete auxiliar quem envia arquivos pelo mensageiro",
+      "conteudo": "Nem nos primeiros dias do ano o WhatsApp deixou de trabalhar para trazer novidades para os usuários do aplicativo de mensagens. Desta vez, uma nova atualização promete ajudar quem tem o costume de enviar mídias nas conversas do mensageiro.\n\nComo funciona\nO novo recurso foca em três pontos. São eles:\n\nFuncionalidade: A ferramenta consiste em uma notificação de aviso ao usuário sobre a possiblidade de enviar uma mídia já com a legenda.\nCompatibilidade: No entanto, até o momento, a novidade está disponível apenas para os testadores do WhatsApp beta. Na prática, a atualização é compatível com a versão 2.23.2.2 para Android.\nPrévia: Desta forma, a mensagem do sistema aparece assim que o usuário encaminhar uma imagem, vídeo, GIF ou mesmo documento.\nIsso porque, em uma de suas últimas atualizações do WhatsApp beta, alguns testadores experimentaram tal recurso de legenda nas mídias. Por isso, o aplicativo resolveu adicionar um lembrete para os usuários não se esquecerem desta novidade\n\nAgora a notificação aparece assim que uma imagem, vídeo, GIF ou documento é encaminhado na conversa. Desta forma, além da possibilidade de se adicionar legenda, há também o recurso de remover a legenda inicial antes de enviar ou encaminhar uma mídia.\n\nApesar da novidade ser bem útil para quem gosta de encaminhar arquivos pelo mensageiro, ainda não há previsão de chegada da melhoria para o público em geral do WhatsApp.\n\nFim da compatibilidade\n\nEm fevereiro, alguns modelos de celular iOS e Android deixarão de serem compatíveis com o WhatsApp. No caso do Android, todos os que possuem sistema operacional anterior a 4.1 terão que se despedir do app. Por fim, os iPhones 5s, 6 e 6 Plus também terão as atualizações da ferramenta descontinuadas.\n\n\n",
+      "id": 19
+    },
+    {
+      "autor_id": "2",
+      "categoria_id": "0",
+      "titulo": "O que é o código de status HTTP 304?",
+      "conteudo": "HTTP 304, também conhecido como “304 Not Modified”, é um código que comunica ao seu navegador que: “O recurso solicitado não foi modificado desde a última vez que você o acessou”.\n\nA Internet Engineering Task Force (IETF) define o 304 Not Modified como:\n\nO código de status 304 (não modificado) indica que uma solicitação GET ou HEAD condicional foi recebida e teria resultado em uma resposta 200 (OK) se não fosse pelo fato de a condição ter sido avaliada como falsa. Ou seja, não há necessidade de o servidor transferir uma representação do recurso de destino, pois a requisição indica que o cliente, que condicionou a requisição, já possui uma representação válida; o servidor está, portanto, redirecionando o cliente para fazer uso dessa representação armazenada como se fosse a carga útil de uma resposta 200 (OK).\n\nEssencialmente, seu navegador (ou do visitante) está sendo informado pelo servidor de que os recursos armazenados (em cache) no navegador não foram modificados desde a última vez que você visitou essa página.\n\nPor sua vez, seu navegador recupera uma versão salva da página da web do cache . O objetivo disso é melhorar a velocidade e a entrega da página, evitando que seu navegador tenha que baixar repetidamente as mesmas informações.",
+      "id": 20
     }
   ],
   "comentarios": [
@@ -216,6 +252,18 @@
       "postagem_id": "9",
       "conteudo": " queria trabalhar lá",
       "id": 11
+    },
+    {
+      "user_id": "1",
+      "postagem_id": "10",
+      "conteudo": "valeu pela expilcação ",
+      "id": 12
+    },
+    {
+      "user_id": "6",
+      "postagem_id": "1",
+      "conteudo": "a Alice é corajosa em  😃.",
+      "id": 13
     }
   ]
 }

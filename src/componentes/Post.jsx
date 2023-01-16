@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import './post.css';
+import './post.css'
 
 
 function Post ({titulo, contenu, height, autor, maxwidth, id_postagem}) {
@@ -21,7 +21,7 @@ function Post ({titulo, contenu, height, autor, maxwidth, id_postagem}) {
         .then((reponse) => {
             setComments(reponse.filter((comment) => comment.postagem_id === `${id_postagem}`)) 
         })
-    }, [comments])
+    }, [])
 
       const comment = comments.length === undefined || 0 ? 0 : comments.length
       const quantidadeComments = comments.length > 1 ? 'comentarios' : 'comentario';
@@ -37,13 +37,14 @@ function Post ({titulo, contenu, height, autor, maxwidth, id_postagem}) {
         })
         .then((reponse) => reponse.json())
         .then((reponse) => setNomeAutor(reponse.nome))     
-    })
+    }, [])
 
 
 
     return(
     
             <div 
+                className="content"
                 id="content" 
                 style={{
                     position : 'relative',
@@ -55,7 +56,7 @@ function Post ({titulo, contenu, height, autor, maxwidth, id_postagem}) {
                     background: '#e6e6e6',
                     marginTop: '5px',
                     cursor : 'pointer',
-                    color : '#000'
+                    color : '#000',
                 }}
             
             >
