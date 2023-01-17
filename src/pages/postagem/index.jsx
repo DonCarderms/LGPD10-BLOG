@@ -14,6 +14,7 @@ const  Postagem =()=>{
     const url = window.location.search
     const id_postagem = url.split('?')[1]
 
+    const goToLogin = () => window.location.href=`http://localhost:3001`;
     
     useEffect(() =>{
         
@@ -30,7 +31,9 @@ const  Postagem =()=>{
         })
     }, [])
 
-
+    if(!localStorage.getItem('user_id')){
+        goToLogin()
+    }
 
 
     return (
@@ -48,7 +51,6 @@ const  Postagem =()=>{
                                 id_postagem={postagem.id}
                                 contenu={postagem.conteudo} 
                                 autor={postagem.autor_id}
-                                comments={''}
                             />
                     </div>
                 }
@@ -104,8 +106,6 @@ export const Comentario =({id_postagem, user_id})=>{
 
                 setComment('')
             }
-
-
    }
 
    useEffect(() => {
@@ -121,11 +121,9 @@ export const Comentario =({id_postagem, user_id})=>{
     .then((reponse) => setComments(reponse.filter((comment) => comment.postagem_id === id_postagem)))
 }, [comment])
 
-
-
     return(
         <div className="commentarios-container">
-                {/* <Postagem/> */}
+            
                 <div className="div_textera_enviar">
                      <p>comentarios</p>
                         <input

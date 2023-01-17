@@ -2,11 +2,12 @@ import React, {useEffect, useState} from "react";
 import './post.css'
 
 
-function Post ({titulo, contenu, height, autor, maxwidth, id_postagem}) {
+function Post ({titulo, contenu, height, autor, maxwidth, id_postagem, showBtnDelete}) {
 
     const [comments, setComments] = useState([])
     const [nomeAutor, setNomeAutor] = useState()
 
+    
 
     useEffect(() => {
         fetch(`http://localhost:3000/comentarios`, {
@@ -21,7 +22,7 @@ function Post ({titulo, contenu, height, autor, maxwidth, id_postagem}) {
         .then((reponse) => {
             setComments(reponse.filter((comment) => comment.postagem_id === `${id_postagem}`)) 
         })
-    }, [])
+    }, [id_postagem])
 
       const comment = comments.length === undefined || 0 ? 0 : comments.length
       const quantidadeComments = comments.length > 1 ? 'comentarios' : 'comentario';
@@ -37,9 +38,20 @@ function Post ({titulo, contenu, height, autor, maxwidth, id_postagem}) {
         })
         .then((reponse) => reponse.json())
         .then((reponse) => setNomeAutor(reponse.nome))     
-    }, [])
+    }, [autor])
 
+    
+    const deletePost =(id) =>{
+        
+        fetch(`http://localhost:3000/postagens/${id}`, {
+            method : 'DELETE',
+            headers : {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }
+        })
 
+    }
 
     return(
     
@@ -83,7 +95,15 @@ function Post ({titulo, contenu, height, autor, maxwidth, id_postagem}) {
                         fontSize : '0.9rem'
                     }}
                 > {comment} {quantidadeComments} <img width={'12'}src="https://img.icons8.com/material-outlined/24/null/comments--v1.png"/></span>
-                
+                {
+                    showBtnDelete 
+                    ?<div>
+                        <button type="submit" value={id_postagem} style={{ background : '0', border : 0 }} onClick={(e) => deletePost(e.target.value)}>
+                          delete
+                        </button> 
+                    </div> 
+                     : ''
+                }
                 </div>
 
                 <p style={{

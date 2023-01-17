@@ -3,14 +3,14 @@
 }
 
 .post-autor {
-    height: 350px;
+    height: 300px;
     background-color: #f1f1f1;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
     max-width: 900px;
     margin: auto;
-    margin-top: 60px;
+    margin-top: 10px;
     box-shadow: 3px 3px 5px #999;
     margin-bottom: 20px;
   }
@@ -63,7 +63,7 @@
 }
 .bt-sair{
   top: -13px;
-  right: 205px;
+  right: -10px;
   margin: 20px;
   position: absolute;
   border: 0;

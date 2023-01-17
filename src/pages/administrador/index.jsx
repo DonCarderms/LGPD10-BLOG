@@ -39,7 +39,7 @@ function Admin() {
     const [emailAutor, setEmailAutor] = useState('@gmail.com')
     const [PasswordAutor, setPasswordAutor] = useState('')
 
-    const [categorieName, setCategorieName] = useState()
+    const [categorieName, setCategorieName] = useState('')
 
     const Newautor = (nameAutor, emailAutor, PasswordAutor) => {
         return {
@@ -72,6 +72,39 @@ function Admin() {
         })
     }
 
+    const [deleteAutores, setDeleteAutores] = useState(false)
+
+    const deleteAutor = (id)=> {
+        fetch(`http://localhost:3000/autor/${id}`, {
+            method : 'DELETE',
+            headers : {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }
+        }).then((res) => {
+            if(res.statusText === 'OK'){
+                setDeleteAutores(true)
+            }
+        } )
+         
+    }
+
+    const [deleteCategories, setDeleteCategories] = useState(false)
+
+    const deleteCategoria = (id)=> {
+        fetch(`http://localhost:3000/categorias/${id}`, {
+            method : 'DELETE',
+            headers : {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }
+        }).then((res) => {
+            if(res.statusText === 'OK'){
+                setDeleteCategories(true)
+            }
+        } )
+         
+    }
     const reloadCategorias = () => {
         fetch('http://localhost:3000/categorias')
             .then((reponse) => reponse.json())
@@ -91,12 +124,12 @@ function Admin() {
     useEffect(() => {
         if (!autores) return;
         reloadAutores()
-    }, [autores])
+    }, [autores, deleteAutores])
 
     useEffect(() => {
         if (!categorias) return;
         reloadCategorias()
-    }, [categorias])
+    }, [categorias, deleteCategories])
 
     const cadastrarAutor = (e) => {
         e.preventDefault()
@@ -140,6 +173,14 @@ function Admin() {
         }
     }
 
+    window.onbeforeunload = function() {
+        if (existToken && existTokenLogado) {
+            sessionStorage.clear();
+            localStorage.clear();
+        }
+        return '';
+        
+      };
     
     const logout = () => {
         if (existToken && existTokenLogado) {
@@ -166,10 +207,10 @@ function Admin() {
                 <nav>
                     <div>
                         <ul onClick={showAutores}>
-                            <li><a to={''} >autores</a></li>
+                            <li><a >autores</a></li>
                         </ul>
                         <ul onClick={showCategorias}>
-                            <li><a to={''} >categorias</a></li>
+                            <li><a >categorias</a></li>
                         </ul>
                     </div>
 
@@ -225,6 +266,8 @@ function Admin() {
                                                 <th>nome do autor</th>
                                                 <th>email do autor</th>
                                                 <th>Quantidade de Post</th>
+                                                <th></th>
+                                                <th></th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -239,6 +282,16 @@ function Admin() {
                                                             <td style={{
                                                                 textAlign: 'center'
                                                             }}> 89 post</td>
+                                                             <td>
+                                                                <button style={{ background : '#fff', border : 0 }}>
+                                                                    <img src="https://img.icons8.com/material-outlined/24/null/pencil--v2.png"/>
+                                                                </button>
+                                                            </td>
+                                                            <td>
+                                                                <button value={autor.id} style={{ background : '#fff', border : 0 }} onClick={(e) => deleteAutor(e.target.value)}>
+                                                                     <img src="https://img.icons8.com/windows/32/null/trash.png"/>
+                                                                </button>
+                                                            </td>                                                           
                                                         </tr>
                                                     )
                                                 })
@@ -275,6 +328,8 @@ function Admin() {
                                                 height: '50px'
                                             }}>
                                                 <th>Categorias</th>
+                                                <th></th>
+                                                <th></th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -285,6 +340,16 @@ function Admin() {
 
                                                         <tr key={i}>
                                                             <td>{item.nome}</td>
+                                                            <td>
+                                                                    <button style={{ background : '#fff', border : 0 }}>
+                                                                         <img src="https://img.icons8.com/material-outlined/24/null/pencil--v2.png"/>
+                                                                    </button>
+                                                            </td>
+                                                            <td>
+                                                                <button value={item.id} style={{ background : '#fff', border : 0 }} onClick={(e) => deleteCategoria(e.target.value)}>
+                                                                     <img src="https://img.icons8.com/windows/32/null/trash.png"/>
+                                                                </button>
+                                                            </td>
                                                         </tr>
 
                                                     )

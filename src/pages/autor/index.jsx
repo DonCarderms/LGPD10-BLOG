@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Header from "../../componentes/header";
 import Post from "../../componentes/Post";
 import Footer from "../../componentes/Footer";
+import Message from "../../componentes/Message";
 import { Foot } from "../home/index";
 
 import './style.css'
@@ -25,9 +26,10 @@ function Autor() {
     const [categories, setCategories] = useState([])
     const [categoria_id, setCategoria_id] = useState(0)
 
-    const [saveState, setSaveState] = useState(false)
 
     const [postagens, setPostagens] = useState([]) 
+
+    const [newPost, setNewPost] = useState()
 
     const post = (autor, categoria, titulo, conteudo) =>{
         return{
@@ -38,18 +40,22 @@ function Autor() {
         }
     }
 
+
+  const[ Statusmessage, setStatusMessage] =  useState(undefined)
+
    const postContenuSize = () => postContenu.length
 
     const salvarPost = (e) => {
         e.preventDefault()
-           const dados = post(autorId, categoria_id, postTitle, postContenu)
-          
+
+           const dados = post(autorId, (categoria_id - 1), postTitle, postContenu)
            if( 
-            dados.categoria_id !== 'null' &&
-            dados.postTitle !== '' &&
+            dados.categoria_id  >= 0 &&
+            dados.titulo.length >= 10 &&
             postContenuSize() >= 100
             ){
-
+ 
+                setStatusMessage(false)
                 fetch('http://localhost:3000/postagens', {
                     method : 'POST',
                     body: JSON.stringify(dados),
@@ -57,17 +63,20 @@ function Autor() {
                         'Accept': 'application/json',
                         'Content-Type': 'application/json'
                     }
+                }).then((res) => res.json())
+                .then((res) => {
+                    setNewPost(res)
+
+                    setPostTitle('')
+                    setPostContenu('')
                 })
-                .then((reponse) => {
-                    console.log(reponse)
-                    setSaveState(true)
-                })
+            }else {
+                    setStatusMessage(true)           
             }
 
 
     }
-   
-    
+
     useEffect(() => {
         fetch('http://localhost:3000/categorias')
         .then((response) => response.json())
@@ -83,14 +92,21 @@ function Autor() {
         .then((reponse) => {  
             setPostagens(reponse.filter(post => post.autor_id === autorId))
         })
-    }, [saveState])
+    }, [newPost])
     
     if (!existToken && !existTokenLogado) {
-        window.location.href = `http://localhost:3001`;
+        window.location.href=`http://localhost:3001`;
     } else {
         localStorage.setItem('autorLogado', existToken)
     }
-    
+
+    // window.onbeforeunload = function() {
+    //     sessionStorage.clear('autorSession')
+    //     localStorage.clear('autorLogado')
+    //     return '';
+        
+    //   };
+
     const logout = () => {
         sessionStorage.clear('autorSession')
         localStorage.clear('autorLogado')
@@ -108,6 +124,10 @@ function Autor() {
                 <div className="post-autor">
                         <div className="container">
                             <form>
+                                <div style={{margin : '10px', textAlign : 'center' }}>
+
+                                  <Message status={Statusmessage} msgError='dados incorretos' msgSucces='post publicado com sucesso!'/>
+                                </div>
                                 <div className="">
                                     <label htmlFor="fname">Título do Post</label>
                                     <input 
@@ -128,11 +148,11 @@ function Autor() {
                                    ></textarea>
                                 Categorias
                                 <select name="" id="" onClick={(e) => {setCategoria_id(e.target.value)}}>
-                                    <option value="null">selectionar o categoria</option>
+                                    <option value={0}>selectionar o categoria</option>
                                     { 
                                         categories.map((cat, i) => {
                                             return(
-                                                <option key={i} value={cat.id}>{cat.nome}</option>
+                                                <option key={i} value={cat.id + 1}>{cat.nome}</option>
                                             )
                                         })
                                     }
@@ -149,7 +169,8 @@ function Autor() {
                             return(
                                 <div key={i}>
                                     
-                                    <Post titulo={post.titulo} maxwidth='900px' autor={autorId} id_postagem={post.id}/>  
+                                        <Post titulo={post.titulo} maxwidth='900px' autor={autorId} id_postagem={post.id} showBtnDelete={true}/> 
+                                                                     
                                 </div>
                                             
                             )
@@ -159,6 +180,7 @@ function Autor() {
                     } 
                     
                     
+                <br/><br/>
                 <br/><br/>
                 </div>
                

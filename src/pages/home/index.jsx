@@ -19,22 +19,27 @@ function Home () {
     const [postagens, setPostagens] = useState([]) 
    
     
-useEffect(() => {
+
 
     if(!existToken){
         if(!existTokenLogado){
+            if(!localStorage.getItem('user_id'))
               goToLogin();  
         }
     }else{
         localStorage.setItem('logado', existToken)
-        sessionStorage.setItem('user', user)
+        localStorage.setItem('user', user)
     }
-})
 
-  let username = user
-    if(!user){
-        username  = localStorage.getItem('user')
-    }
+
+
+window.onbeforeunload = function() {
+    localStorage.removeItem("logado"); 
+    localStorage.removeItem("user"); 
+    localStorage.removeItem("user_id"); 
+    return '';
+    
+  };
 
 
 
@@ -50,7 +55,7 @@ useEffect(() => {
     return(
         <div id="container">
             <Header titulo='LGPD BLOG' background='#656598' heigth={'0px'}/>
-            <div style={{marginTop : '65px'}}> 
+            <div style={{marginTop : '10px'}}> 
                 <h2 className="postagens">Postagens recentes </h2>      
 
             </div>
@@ -118,7 +123,6 @@ export const Pagination = ({dadosPost}) =>{
                 <div>
                       {
                           currentItens.map((post, i) => {
-                            console.log(post.id)
                               return(
                                   <Link  to={`/Postagem?${post.id}`} key={i} >
                                       <Post titulo={post.titulo} autor={post.autor_id} id_postagem={post.id} maxwidth='900px'/>
