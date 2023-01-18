@@ -14,6 +14,7 @@ import './style.css'
 
 
 function Autor() {
+
     const existToken = sessionStorage.getItem('autorSession')
     const existTokenLogado = localStorage.getItem('autorLogado')
 
@@ -28,7 +29,6 @@ function Autor() {
 
 
     const [postagens, setPostagens] = useState([]) 
-
     const [newPost, setNewPost] = useState()
 
     const post = (autor, categoria, titulo, conteudo) =>{
@@ -52,7 +52,8 @@ function Autor() {
            if( 
             dados.categoria_id  >= 0 &&
             dados.titulo.length >= 10 &&
-            postContenuSize() >= 100
+            postContenuSize() >= 100 &&
+            postContenuSize() <= 1000
             ){
  
                 setStatusMessage(false)
@@ -100,12 +101,6 @@ function Autor() {
         localStorage.setItem('autorLogado', existToken)
     }
 
-    // window.onbeforeunload = function() {
-    //     sessionStorage.clear('autorSession')
-    //     localStorage.clear('autorLogado')
-    //     return '';
-        
-    //   };
 
     const logout = () => {
         sessionStorage.clear('autorSession')
@@ -115,6 +110,7 @@ function Autor() {
     
     return (
         <div className="div-app">
+            <div className="wrapper"></div>
             <Header titulo='LGPD BLOG' background='#656598' user={autor} heigth='10px'/>
              <button className="bt-sair" onClick={logout}>
                <img width={20} src="https://img.icons8.com/ios-filled/50/null/logout-rounded-left.png"/>
@@ -190,5 +186,6 @@ function Autor() {
       
     )
 }
+
 
 export default Autor;

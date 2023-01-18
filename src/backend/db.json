@@ -97,13 +97,6 @@
   ],
   "postagens": [
     {
-      "autor_id": "1",
-      "categoria_id": 0,
-      "titulo": "Alice encontra coração novo inesperado em sua jornada de descoberta",
-      "conteudo": "Alice, uma jovem aventureira, estava em uma jornada de descoberta em busca de seu verdadeiro propósito na vida. Desde o início de sua jornada, ela foi forçada a enfrentar muitos desafios, aprender lições difíceis e passar por muitas experiências inesperadas.\n\nNo entanto, durante a jornada, ela acabou descobrindo algo de que nunca esperou: um novo coração. Uma vez que ela absorveu essa descoberta, ela entendeu que ainda havia muito a ser descobrir sobre sua própria identidade.\n\nAgora, ela se esforça para descobrir como usar seu novo coração em benefício próprio, aproveitar o novo conhecimento e se conectar com seu verdadeiro propósito. O que ela conseguirá descobrir em sua jornada de autodescoberta? Talvez seja algo que ela jamais poderia imaginar.",
-      "id": 1
-    },
-    {
       "autor_id": "2",
       "categoria_id": 0,
       "titulo": "Identificação de Conceitos e Atributos",
@@ -130,13 +123,6 @@
       "titulo": "Os funcionários da Microsoft estão tendo folga ilimitada",
       "conteudo": "A Microsoft está dando folga ilimitada a seus funcionários americanos. O anúncio foi feito em um e-mail aos funcionários de Kathleen Hogan, diretora de pessoal da Microsoft, hoje em um memorando visto pelo The Verge . A Microsoft está chamando sua folga ilimitada de “Folga Discricionária” e se aplicará a todos os funcionários assalariados dos EUA.\n\n“Como, quando e onde fazemos nosso trabalho mudou drasticamente”, explica Hogan no memorando interno. “E conforme nos transformamos, modernizar nossa política de férias para um modelo mais flexível foi o próximo passo natural.”\n\nAs mudanças começarão em 16 de janeiro e significam que até mesmo os novos funcionários da Microsoft não precisam mais esperar para acumular férias. A Microsoft oferecerá 10 feriados corporativos, licenças, folgas por doença e problemas de saúde mental e tempo ausente para serviço de júri ou luto juntamente com esta nova política de folga ilimitada. Os funcionários que tiverem um saldo de férias não utilizado receberão um pagamento único em abril.",
       "id": 9
-    },
-    {
-      "autor_id": "1",
-      "categoria_id": 4,
-      "titulo": "o que faz com que a minha hook useffect ficar em loop infinito",
-      "conteudo": "\n// Um motivo possível é que você não colocou um array de dependências vazio como segundo argumento para sua função useEffect. Isso significa que sempre que qualquer uma das variáveis em seu estado mudar, o useEffect será acionado novamente, o que resulta em um loop infinito. Certifique-se de que seu useEffect tenha um array de dependências como segundo argumento para evitar isso.",
-      "id": 10
     },
     {
       "autor_id": "2",

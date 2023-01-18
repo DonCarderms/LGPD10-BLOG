@@ -86,12 +86,13 @@ export const Comentario =({id_postagem, user_id})=>{
         e.preventDefault()
         
         const dados = pegarDados(user_id, id_postagem, comment)
-            
 
         if(
             dados.user_id !== '' &&
             dados.id_postagem !== '' &&
-            dados.conteudo !== ''
+            dados.conteudo !== '' &&
+            dados.conteudo.length >= 10 &&
+            dados.conteudo.length <= 100
     
             ){
 
@@ -102,13 +103,15 @@ export const Comentario =({id_postagem, user_id})=>{
                             'Accept': 'application/json',
                             'Content-Type': 'application/json'
                         }         
-                    })
+                    }).then(()=>{
+                        loadComentario()
+                    }).catch((e)=>console.log(e))
 
                 setComment('')
             }
    }
 
-   useEffect(() => {
+   const loadComentario = () => {
     fetch(`http://localhost:3000/comentarios`, {
         method : 'GET',
         headers: {
@@ -119,7 +122,11 @@ export const Comentario =({id_postagem, user_id})=>{
     })
     .then((reponse) => reponse.json())
     .then((reponse) => setComments(reponse.filter((comment) => comment.postagem_id === id_postagem)))
-}, [comment])
+   }
+
+   useEffect(() => {
+    loadComentario()
+}, [])
 
     return(
         <div className="commentarios-container">
@@ -166,7 +173,8 @@ export const GetUserName = ({user_id}) => {
 
        const  [userName, setUserName] = useState('')
 
-        fetch(`http://localhost:3000/user/${user_id}`, {
+        const loadUsuario = () => {
+            fetch(`http://localhost:3000/user/${user_id}`, {
             method : 'GET',
             headers : {
                 'Accept': 'application/json',
@@ -174,6 +182,11 @@ export const GetUserName = ({user_id}) => {
             }
         }).then((res) => res.json())
         .then((res) =>setUserName(res.nome))
+        }
+
+        React.useEffect(()=>{
+            loadUsuario()
+        }, [user_id])
 
         return(
                 <h5 className="userName">

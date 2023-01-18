@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
-import './post.css'
-
-
+import './post.css';
+import delete_svg from '../images/delete.svg';
+import ModalPost from "./Modal";
 function Post ({titulo, contenu, height, autor, maxwidth, id_postagem, showBtnDelete}) {
 
     const [comments, setComments] = useState([])
@@ -42,7 +42,7 @@ function Post ({titulo, contenu, height, autor, maxwidth, id_postagem, showBtnDe
 
     
     const deletePost =(id) =>{
-        
+
         fetch(`http://localhost:3000/postagens/${id}`, {
             method : 'DELETE',
             headers : {
@@ -53,9 +53,16 @@ function Post ({titulo, contenu, height, autor, maxwidth, id_postagem, showBtnDe
 
     }
 
+    const [ editId, setEditId] = useState()
+
+    const editPost = (id) => {
+        setEditId(id)
+    }
+
     return(
     
             <div 
+           
                 className="content"
                 id="content" 
                 style={{
@@ -71,7 +78,14 @@ function Post ({titulo, contenu, height, autor, maxwidth, id_postagem, showBtnDe
                     color : '#000',
                 }}
             
-            >
+            > 
+                {
+                    editId !== undefined
+                    ?<ModalPost id={editId}/>
+                    : ''
+                }
+                
+                
                 <h2 
                     style={{
                         fontSize: '0.9em',
@@ -97,10 +111,36 @@ function Post ({titulo, contenu, height, autor, maxwidth, id_postagem, showBtnDe
                 > {comment} {quantidadeComments} <img width={'12'}src="https://img.icons8.com/material-outlined/24/null/comments--v1.png"/></span>
                 {
                     showBtnDelete 
-                    ?<div>
-                        <button type="submit" value={id_postagem} style={{ background : '0', border : 0 }} onClick={(e) => deletePost(e.target.value)}>
-                          delete
-                        </button> 
+                    ?<div style={{display : 'flex' }}>
+                        <button 
+                            value={id_postagem} 
+                            style={{
+                                backgroundImage : 'url("https://img.icons8.com/ios-glyphs/30/null/edit-row.png")',
+                                backgroundRepeat : 'no-repeat',
+                                backgroundPosition : 'center',
+                                backgroundSize : '20px'
+                            }}
+
+                            onClick={(e) => editPost(e.target.value)}
+                        >
+
+                        </button>
+                        <form >
+
+                            <button
+                            type="submit"
+                            value={id_postagem} 
+                            style={{
+                                    backgroundImage: 'url("https://img.icons8.com/ios-glyphs/30/null/delete-forever.png")' , 
+                                    border : 0,
+                                    backgroundRepeat : 'no-repeat',
+                                    backgroundPosition : 'center',
+                                    backgroundSize : '20px'
+                                }} 
+                                onClick={(e) => deletePost(e.target.value)}>
+                            </button> 
+                        </form>
+                       
                     </div> 
                      : ''
                 }

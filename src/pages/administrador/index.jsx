@@ -72,7 +72,6 @@ function Admin() {
         })
     }
 
-    const [deleteAutores, setDeleteAutores] = useState(false)
 
     const deleteAutor = (id)=> {
         fetch(`http://localhost:3000/autor/${id}`, {
@@ -81,15 +80,10 @@ function Admin() {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             }
-        }).then((res) => {
-            if(res.statusText === 'OK'){
-                setDeleteAutores(true)
-            }
-        } )
+        }).then(() => reloadAutores())
          
     }
 
-    const [deleteCategories, setDeleteCategories] = useState(false)
 
     const deleteCategoria = (id)=> {
         fetch(`http://localhost:3000/categorias/${id}`, {
@@ -98,10 +92,8 @@ function Admin() {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             }
-        }).then((res) => {
-            if(res.statusText === 'OK'){
-                setDeleteCategories(true)
-            }
+        }).then(() => {
+            reloadCategorias()
         } )
          
     }
@@ -124,12 +116,12 @@ function Admin() {
     useEffect(() => {
         if (!autores) return;
         reloadAutores()
-    }, [autores, deleteAutores])
+    }, [autores])
 
     useEffect(() => {
         if (!categorias) return;
         reloadCategorias()
-    }, [categorias, deleteCategories])
+    }, [categorias])
 
     const cadastrarAutor = (e) => {
         e.preventDefault()
@@ -140,17 +132,16 @@ function Admin() {
             fetch('http://localhost:3000/autor')
                 .then((reponse) => reponse.json())
                 .then((reponse) => {
-                    console.log(reponse)
                     const [...autor] = reponse
 
                     const existName = autor.filter(element => element.nome === dados.nome)
                     const existEmail = autor.filter(element => element.email === dados.email)
                     const existPassword = autor.filter(element => element.senha === dados.senha)
 
-                    console.log(existName, existEmail, existPassword)
+                 
 
                     if (existName.length === 0 && existEmail.length === 0 && existPassword.length === 0) {
-                        console.log('passou')
+                        
                         fetch('http://localhost:3000/autor', {
                             method: 'POST',
                             body: JSON.stringify(dados),
@@ -274,22 +265,31 @@ function Admin() {
 
                                             {
                                                 autorData.map((autor, i) => {
-
+                                                    
                                                     return (
                                                         <tr key={i}>
                                                             <td>{autor.nome}</td>
+                                                            
                                                             <td>{autor.email}</td>
                                                             <td style={{
                                                                 textAlign: 'center'
-                                                            }}> 89 post</td>
+                                                            }}> <QuantidadePost autor_id={autor.id}/></td>
                                                              <td>
                                                                 <button style={{ background : '#fff', border : 0 }}>
-                                                                    <img src="https://img.icons8.com/material-outlined/24/null/pencil--v2.png"/>
+                                                                   
                                                                 </button>
                                                             </td>
                                                             <td>
-                                                                <button value={autor.id} style={{ background : '#fff', border : 0 }} onClick={(e) => deleteAutor(e.target.value)}>
-                                                                     <img src="https://img.icons8.com/windows/32/null/trash.png"/>
+                                                                <button 
+                                                                value={autor.id} 
+                                                                style={{
+                                                                    backgroundImage: 'url("https://img.icons8.com/ios-glyphs/30/null/delete-forever.png")' , 
+                                                                    border : 0,
+                                                                    backgroundRepeat : 'no-repeat',
+                                                                    backgroundPosition : 'center'
+                                                                  }} 
+                                                                 onClick={(e) => deleteAutor(e.target.value)}>
+                                                                    
                                                                 </button>
                                                             </td>                                                           
                                                         </tr>
@@ -342,12 +342,21 @@ function Admin() {
                                                             <td>{item.nome}</td>
                                                             <td>
                                                                     <button style={{ background : '#fff', border : 0 }}>
-                                                                         <img src="https://img.icons8.com/material-outlined/24/null/pencil--v2.png"/>
+                                                                        
                                                                     </button>
                                                             </td>
                                                             <td>
-                                                                <button value={item.id} style={{ background : '#fff', border : 0 }} onClick={(e) => deleteCategoria(e.target.value)}>
-                                                                     <img src="https://img.icons8.com/windows/32/null/trash.png"/>
+                                                                <button
+                                                                 value={item.id} 
+                                                                 style={{
+                                                                    backgroundImage: 'url("https://img.icons8.com/ios-glyphs/30/null/delete-forever.png")' , 
+                                                                    border : 0,
+                                                                    backgroundRepeat : 'no-repeat',
+                                                                    backgroundPosition : 'center'
+                                                                  }} 
+                                                                 
+                                                                 onClick={(e) => deleteCategoria(e.target.value)}>
+                                                                    
                                                                 </button>
                                                             </td>
                                                         </tr>
@@ -367,5 +376,32 @@ function Admin() {
         </div>
     )
 }
+
+export const QuantidadePost = ({autor_id}) =>{
+    const [quantidadePost, setQuantidadePost] = useState(0)
+    const loadQtdPost =()=>{
+        fetch(`http://localhost:3000/postagens`)
+        .then((res) => res.json())
+        .then((res) => setQuantidadePost(res.filter((post) => post.autor_id === `${autor_id}`).length))
+    }
+
+    useEffect(() => {
+        loadQtdPost()
+    }, [autor_id])
+
+    return(
+        <span>
+            
+            {
+                quantidadePost > 1
+                ? quantidadePost + ' Posts'
+                 
+                :quantidadePost + ' Post'
+            }
+        </span>
+    )
+}
+
+
 
 export default Admin;

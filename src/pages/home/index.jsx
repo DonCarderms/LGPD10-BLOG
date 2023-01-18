@@ -41,15 +41,47 @@ window.onbeforeunload = function() {
     
   };
 
+  const [categoria, setCategoria] = useState()
+  const [categories, setCategories] = useState([])
+  const [filterTitle, setFilterTitle] = useState('')
 
-
-    useEffect(() => {
+  const loadPostagens = () => {
         fetch('http://localhost:3000/postagens')
         .then((response) => response.json())
         .then((reponse) => {  
-            setPostagens(reponse)
+
+             const filterCategoria = reponse.filter(item => item.categoria_id === categoria)   
+             const filterPerTilte = reponse.filter(item => item.titulo.toLowerCase().startsWith(filterTitle.toLowerCase())) 
+
+             let filtrado = reponse
+             if(filterPerTilte.length > 0){
+                filtrado = filterPerTilte
+             }
+             if(categoria >= 0){          
+                filtrado = filterCategoria
+             }
+               
+              setPostagens(filtrado)
+            
+                           
+                                
+        })
+  }
+
+    useEffect(() => {
+        loadPostagens()
+    },[categoria, filterTitle])
+
+   
+
+    useEffect(() => {
+        fetch('http://localhost:3000/categorias')
+        .then((response) => response.json())
+        .then((reponse) => {
+            setCategories(reponse)
         })
     }, [])
+    
 
 
     return(
@@ -57,7 +89,20 @@ window.onbeforeunload = function() {
             <Header titulo='LGPD BLOG' background='#656598' heigth={'0px'}/>
             <div style={{marginTop : '10px'}}> 
                 <h2 className="postagens">Postagens recentes </h2>      
-
+                
+                <select name="filter" id="filter" onClick={(e) => {setCategoria(e.target.value)}}>
+                                    <option >categoria</option>
+                                    { 
+                                        categories.map((cat, i) => {
+                                            return(
+                                                <option key={i} value={cat.id}>{cat.nome}</option>
+                                            )
+                                        })
+                                    }
+                </select>
+                                 <label htmlFor="filterNome">filtar por titulo</label>
+                                 <input type="text" name="filterNome" value={filterTitle} onChange={(e) => setFilterTitle(e.target.value)}/>
+               
             </div>
             <div className="Posts">
                       <Pagination  dadosPost={postagens}  />                    
