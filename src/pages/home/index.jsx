@@ -18,8 +18,6 @@ function Home () {
     
     const [postagens, setPostagens] = useState([]) 
    
-    
-
 
     if(!existToken){
         if(!existTokenLogado){
@@ -54,9 +52,9 @@ window.onbeforeunload = function() {
              const filterPerTilte = reponse.filter(item => item.titulo.toLowerCase().startsWith(filterTitle.toLowerCase())) 
 
              let filtrado = reponse
-             if(filterPerTilte.length > 0){
+             if(filterTitle.length > 0){
                 filtrado = filterPerTilte
-             }
+             }else
              if(categoria >= 0){          
                 filtrado = filterCategoria
              }
@@ -67,6 +65,8 @@ window.onbeforeunload = function() {
                                 
         })
   }
+
+//   const filteredPost = 
 
     useEffect(() => {
         loadPostagens()
@@ -90,21 +90,25 @@ window.onbeforeunload = function() {
             <div style={{marginTop : '10px'}}> 
                 <h2 className="postagens">Postagens recentes </h2>      
                 
-                <select name="filter" id="filter" onClick={(e) => {setCategoria(e.target.value)}}>
-                                    <option >categoria</option>
-                                    { 
-                                        categories.map((cat, i) => {
-                                            return(
-                                                <option key={i} value={cat.id}>{cat.nome}</option>
-                                            )
-                                        })
-                                    }
-                </select>
-                                 <label htmlFor="filterNome">filtar por titulo</label>
-                                 <input type="text" name="filterNome" value={filterTitle} onChange={(e) => setFilterTitle(e.target.value)}/>
                
             </div>
             <div className="Posts">
+                <div>
+
+                    <label htmlFor="filter">filtar por categoria</label>
+                    <select name="filter" id="filter" onClick={(e) => {setCategoria(e.target.value)}}>
+                                        <option >nenhum</option>
+                                        { 
+                                            categories.map((cat, i) => {
+                                                return(
+                                                    <option key={i} value={cat.id}>{cat.nome}</option>
+                                                )
+                                            })
+                                        }
+                    </select>
+                    <label htmlFor="filterNome">filtar por titulo</label>
+                    <input type="text" name="filterNome" value={filterTitle} onChange={(e) => setFilterTitle(e.target.value)}/>
+                </div>
                       <Pagination  dadosPost={postagens}  />                    
             </div>
 

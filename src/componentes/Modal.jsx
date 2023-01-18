@@ -18,8 +18,34 @@ const ModalPost =({id}) => {
     }, [])
 
 
-    const objectVazio = Object.values(postagem).length ===  0
-    console.log(objectVazio)
+    const handleEditTitle = (e) => {
+        setPostagem({
+            ...postagem,
+            titulo : e.target.value
+        }
+        )
+    }
+
+    const handleEditContentPost = (e) => {
+        setPostagem({
+            ...postagem,
+            conteudo : e.target.value
+        })
+    }
+
+    const editPost = () => {
+        fetch(`http://localhost:3000/postagens/${postagem.id}` , {
+            method: 'PUT',
+            body: JSON.stringify(postagem),
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }
+        }).catch(() => {
+            window.alert('Deu erro, tente novamente');
+        })
+    }
+
     return(
         <div className="modal"> 
             
@@ -32,18 +58,20 @@ const ModalPost =({id}) => {
                     name='titulo'
                     id="titulo"
                     value={postagem.titulo}
+                    onChange={(e) => handleEditTitle(e)}
                     />
                 </div>
-                <div>
+                <div style={{ width : '100%'}}>
                     <label htmlFor="contenu">Contéudo do post</label>
                     <textarea 
                     type="text"
                     name="contenu"
                     id="contenu"
                     value={postagem.conteudo}
+                    onChange={(e) => handleEditContentPost(e)}
                     />
                 </div>
-                 <input className="editar" type="submit" value="editar" />
+                 <input className="editar" type="submit" value="editar" onClick={editPost}/>
            </form>
         </div>
     )

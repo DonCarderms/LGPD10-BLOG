@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import './post.css';
+import './Post.css';
 import delete_svg from '../images/delete.svg';
 import ModalPost from "./Modal";
 function Post ({titulo, contenu, height, autor, maxwidth, id_postagem, showBtnDelete}) {

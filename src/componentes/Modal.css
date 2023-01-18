@@ -4,7 +4,7 @@
     right: 0;
     bottom: 0;
     position: fixed;
-    background: #ffffff;
+    background: #dbdada;
     margin: auto;
     max-width: 900px;
     height: 322px;    
@@ -20,4 +20,7 @@
 }
 .editar{
     cursor: pointer;
+}
+.modal textarea {
+    max-height: 100px;
 }
