@@ -28,7 +28,7 @@ const  Postagem =()=>{
         .then((reponse) => reponse.json())
         .then((reponse) => {
             setPostagem(reponse)
-        })
+        }).catch((error) => console.log(error))
     }, [])
 
     if(!localStorage.getItem('user_id')){
@@ -122,6 +122,7 @@ export const Comentario =({id_postagem, user_id})=>{
     })
     .then((reponse) => reponse.json())
     .then((reponse) => setComments(reponse.filter((comment) => comment.postagem_id === id_postagem)))
+    .catch((error) => console.log(error))
    }
 
    useEffect(() => {
@@ -182,6 +183,7 @@ export const GetUserName = ({user_id}) => {
             }
         }).then((res) => res.json())
         .then((res) =>setUserName(res.nome))
+        .catch((error) => console.log(error))
         }
 
         React.useEffect(()=>{

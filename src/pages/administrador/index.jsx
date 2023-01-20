@@ -59,17 +59,20 @@ function Admin() {
     const cadstrarCategoria = (e) => {
         e.preventDefault()
         const dados = newCategoria(categorieName)
-        fetch('http://localhost:3000/categorias', {
-            method: 'POST',
-            body: JSON.stringify(dados),
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            }
-        }).then(() => {
-            reloadCategorias()
-            setCategorieName('')
-        })
+        if(dados.nome.length > 0){
+
+            fetch('http://localhost:3000/categorias', {
+                method: 'POST',
+                body: JSON.stringify(dados),
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                }
+            }).then(() => {
+                reloadCategorias()
+                setCategorieName('')
+            }).catch((error) => console.log(error))
+        }
     }
 
 
@@ -81,6 +84,7 @@ function Admin() {
                 'Content-Type': 'application/json'
             }
         }).then(() => reloadAutores())
+        .catch((error) => console.log(error))
          
     }
 
@@ -94,7 +98,7 @@ function Admin() {
             }
         }).then(() => {
             reloadCategorias()
-        } )
+        } ).catch((error) => console.log(error))
          
     }
     const reloadCategorias = () => {
@@ -102,7 +106,7 @@ function Admin() {
             .then((reponse) => reponse.json())
             .then((reponse) => {
                 setCategorieData(reponse)
-            })
+            }).catch((error) => console.log(error))
     }
 
     const reloadAutores = () => {
@@ -110,7 +114,7 @@ function Admin() {
             .then((reponse) => reponse.json())
             .then((reponse) => {
                 setAutorData(reponse)
-            })
+            }).catch((error) => console.log(error))
     }
 
     useEffect(() => {
@@ -154,7 +158,7 @@ function Admin() {
                             setNameAutor('')
                             setPasswordAutor('')
                             setEmailAutor('@gmail.com')
-                        })
+                        }).catch((error) => console.log(error))
 
                     }
                 })
@@ -178,6 +182,8 @@ function Admin() {
             sessionStorage.clear();
             localStorage.clear();
         }
+
+        window.location.href = `http://localhost:3001`;
     }
 
     return (
@@ -205,12 +211,12 @@ function Admin() {
                         </ul>
                     </div>
 
-                    <div>
-                        <ul>
-                            <li>
-                                <Link to={'/'} onClick={logout}>sair</Link>
-                            </li>
-                        </ul>
+                    <div style={{textAlign : 'center'}} onClick={logout}>     
+                                <Link to={'/'} >
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <path d="M15 3H16.2C17.8802 3 18.7202 3 19.362 3.32698C19.9265 3.6146 20.3854 4.07354 20.673 4.63803C21 5.27976 21 6.11985 21 7.8V16.2C21 17.8802 21 18.7202 20.673 19.362C20.3854 19.9265 19.9265 20.3854 19.362 20.673C18.7202 21 17.8802 21 16.2 21H15M10 7L15 12M15 12L10 17M15 12L3 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>       
+                                 </Link>
                     </div>
                 </nav>
                 <main>
@@ -356,6 +362,7 @@ function Admin() {
                                                                   }} 
                                                                  
                                                                  onClick={(e) => deleteCategoria(e.target.value)}>
+
                                                                     
                                                                 </button>
                                                             </td>
@@ -383,6 +390,7 @@ export const QuantidadePost = ({autor_id}) =>{
         fetch(`http://localhost:3000/postagens`)
         .then((res) => res.json())
         .then((res) => setQuantidadePost(res.filter((post) => post.autor_id === `${autor_id}`).length))
+        .catch((error) => console.log(error))
     }
 
     useEffect(() => {

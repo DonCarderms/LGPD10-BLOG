@@ -4,10 +4,13 @@
     right: 0;
     bottom: 0;
     position: fixed;
-    background: #dbdada;
+    background: #f7f7f7;
     margin: auto;
     max-width: 900px;
-    height: 322px;    
+    height: 322px; 
+    border: 2px solid #866AE3;   
+    border-radius: 15px;
+    box-shadow: 1px -1px 20px 0px #000;
 }
 .modal form {
     width: 100%;
@@ -18,9 +21,37 @@
 .modal form input{
     border: 1px solid #cccc!important;
 }
+.modal form input:focus{
+    border: 1px solid #8361f1!important;
+}
 .editar{
     cursor: pointer;
 }
 .modal textarea {
     max-height: 100px;
+    border: 0;
+    outline: none;
+}
+.modal textarea:focus{
+    border: 1px solid #8361f1;
+}
+.modal #titulo{
+    max-width: 700px;
+    padding: 10px 20px;
+}
+/* .content{
+    position:static!important;
+} */
+.bardiv .bar1{
+    width: 2px;
+    height: 10px;
+    background-color: #000;
+}
+.editar{
+    border-radius: 5px;
+    color: #fff;
+    background-color: #866AE3;
+}
+.editar:hover{
+    background-color: #8361f1;
 }

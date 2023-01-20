@@ -38,8 +38,6 @@ function Cadastro () {
                     const existEmail = user.filter(element => element.email === dados.email) 
                     const existPassword = user.filter(element => element.senha === dados.senha) 
 
-                    
-                    // console.log(existName.length, existEmail.length, existPassword.length)
 
                     if(existName.length === 0 && existEmail.length === 0 && existPassword.length === 0){
                                         fetch(url , {

@@ -70,7 +70,7 @@ function Autor() {
 
                     setPostTitle('')
                     setPostContenu('')
-                })
+                }).catch((error) => console.log(error))
             }else {
                     setStatusMessage(true)           
             }
@@ -83,7 +83,7 @@ function Autor() {
         .then((response) => response.json())
         .then((reponse) => {
             setCategories(reponse)
-        })
+        }).catch((error) => console.log(error))
     }, [])
     
     
@@ -92,7 +92,7 @@ function Autor() {
         .then((response) => response.json())
         .then((reponse) => {  
             setPostagens(reponse.filter(post => post.autor_id === autorId))
-        })
+        }).catch((error) => console.log(error))
     }, [newPost])
     
     if (!existToken && !existTokenLogado) {

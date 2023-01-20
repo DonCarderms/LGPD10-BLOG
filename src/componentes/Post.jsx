@@ -21,7 +21,7 @@ function Post ({titulo, contenu, height, autor, maxwidth, id_postagem, showBtnDe
         .then((reponse) => reponse.json())
         .then((reponse) => {
             setComments(reponse.filter((comment) => comment.postagem_id === `${id_postagem}`)) 
-        })
+        }).catch((error) => console.log(error))
     }, [id_postagem])
 
       const comment = comments.length === undefined || 0 ? 0 : comments.length
@@ -37,7 +37,8 @@ function Post ({titulo, contenu, height, autor, maxwidth, id_postagem, showBtnDe
             }
         })
         .then((reponse) => reponse.json())
-        .then((reponse) => setNomeAutor(reponse.nome))     
+        .then((reponse) => setNomeAutor(reponse.nome))   
+        .catch((error) => console.log(error))  
     }, [autor])
 
     
@@ -145,12 +146,16 @@ function Post ({titulo, contenu, height, autor, maxwidth, id_postagem, showBtnDe
                      : ''
                 }
                 </div>
+                    <p 
+                    
+                        style={{
+                            fontSize: '0.8rem',
+                            position: 'absolute',
+                            bottom: '0'
+                            }}> 
+                    <span style={{ fontWeight : '600' }}>Autor:</span>  <i>{nomeAutor}</i> 
+                    </p>
 
-                <p style={{
-                        fontSize: '0.8rem',
-                        position: 'absolute',
-                        bottom: '0'
-                }}> <span style={{ fontWeight : '600' }}>Autor:</span>  <i>{nomeAutor}</i> </p>
 
             </div>  
 

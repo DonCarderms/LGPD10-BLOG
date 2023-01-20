@@ -36,7 +36,7 @@ function Login () {
                 sessionStorage.setItem('AdmSession', adminToken)
                 window.location.href=`http://localhost:3001/admin`;
              }
-            })
+            }).catch((error) => console.log(error))
 
         fetch('http://localhost:3000/autor')
         .then((reponse) => reponse.json())
@@ -53,7 +53,7 @@ function Login () {
                            
                 }))
           
-            })
+            }).catch((error) => console.log(error))
 
 
          fetch(url)
@@ -72,12 +72,11 @@ function Login () {
                    pegarDadosDoLogin({nome, id})
                 }
 
-            });
+            }).catch((error) => console.log(error));
       
     }   
     
-    const pegarDadosDoLogin =({nome, id}) =>{
-        console.log(nome, id)  
+    const pegarDadosDoLogin =({nome, id}) =>{ 
         sessionStorage.setItem('user', nome)     
     }
 

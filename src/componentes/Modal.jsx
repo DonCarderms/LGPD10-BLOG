@@ -15,6 +15,7 @@ const ModalPost =({id}) => {
             }
         }).then((res) => res.json())
         .then((res) => setPostagem((res)))
+        .catch((error) => console.log(error))
     }, [])
 
 
@@ -73,6 +74,10 @@ const ModalPost =({id}) => {
                 </div>
                  <input className="editar" type="submit" value="editar" onClick={editPost}/>
            </form>
+           <div className="bardiv">
+               <span className="bara1"></span>
+               <span className="bara2"></span>
+           </div>
         </div>
     )
 }

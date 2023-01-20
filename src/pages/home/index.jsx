@@ -63,7 +63,7 @@ window.onbeforeunload = function() {
             
                            
                                 
-        })
+        }).catch((error) => console.log(error))
   }
 
 //   const filteredPost = 
@@ -79,7 +79,7 @@ window.onbeforeunload = function() {
         .then((response) => response.json())
         .then((reponse) => {
             setCategories(reponse)
-        })
+        }).catch((error) => console.log(error))
     }, [])
     
 
