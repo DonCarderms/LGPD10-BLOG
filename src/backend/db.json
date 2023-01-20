@@ -47,6 +47,18 @@
       "email": "kali23@gmail.com",
       "senha": "kali89",
       "id": 6
+    },
+    {
+      "nome": "teste",
+      "email": "testeUser1@teste.com.br",
+      "senha": "#testeyuser1",
+      "id": 7
+    },
+    {
+      "nome": "teste3",
+      "email": "teste3@gmail.com",
+      "senha": "teste3",
+      "id": 8
     }
   ],
   "autor": [
@@ -186,6 +198,13 @@
       "titulo": "GPT-4, o salto exponencial depois do ChatGPT",
       "conteudo": "A velocidade com que a inteligência artificial (IA) está evoluindo já é insana. A chegada prevista para o final de 2023 do GPT-4, a próxima geração do sistema que dá vida às interfaces ChatGPT e Dall-E, acelerará ainda mais a tendência. As pessoas que já estão sem fôlego com os avanços na compreensão e geração automatizada de linguagem natural nos últimos meses são encorajadas a recuperar o fôlego, dar uma olhada em um dicionário e anotar a definição de “exponencial”. Porque é mais ou menos isso que estamos vivenciando hoje em dia: uma evolução que parece cada vez mais rápida nos sistemas informatizados disponíveis para quase todo mundo. Onde esses avanços vão parar? Parece difícil prever. Por outro lado, devemos desde já pensar nos efeitos perversos que estes sistemas terão no quotidiano de muitas pessoas se não forem fiscalizados muito rapidamente. Inteligência artificial geral Porque devemos evitar imediatamente que o balão infle até um certo nível de estouro. Lembre-se de que, apesar dos progressos mais recentes, as interfaces de IA que vimos surgir nos últimos meses não são perfeitas. Eles se aproximam um pouco mais desse outro conceito caro à pesquisa computacional, o de uma inteligência artificial geral, ou “AGI” na sigla em inglês, mas ainda não estão relacionados a ele. Tal sistema, pela definição aceita, assumiria a forma de um software que poderia ser questionado sobre qualquer tipo de problema e saberia como encontrar a solução correta. Tal IA poderia, em princípio, realizar todas as tarefas intelectuais que os humanos são capazes de realizar. Obviamente, para conseguir isso, tal IA terá que ser capaz de distinguir entre o que é verdadeiro, e não apenas provável, e o que é falso, mesmo que seja provável. Idealmente, suas criações, suas obras devem ser autênticas, e não apenas uma colagem de estilos ou inspirações obviamente tiradas de outras pessoas. Isso é mais aparente no lado do gerador de imagens Dall-E, que é melhor em imitar o lápis ou a pincelada de artistas já existentes do que em desenvolver sua própria assinatura visual. Dito isso, a trilha já está borrada: em certos fóruns da Internet onde artistas visuais se encontram, começamos a banir visitantes cujo estilo criativo se parece muito com o de uma IA. Podemos ver a mesma coisa acontecendo nas escolas no final deste inverno, quando os primeiros grandes trabalhos são corrigidos, e os professores podem ficar preocupados com a leitura de trabalhos que de repente parecem mais pesquisados ​​​​do que o normal. Ou seja, mesmo imperfeita, a IA atualmente acessível via Internet já marca presença em todos os lugares. Como de costume, quase ninguém estava pronto para um site aparentemente mundano transformar radicalmente seus hábitos. Especialmente não governos. Seria bom se uma estrutura para limitar os abusos e falhas da IA ​​de amanhã pudesse ver a luz do dia... hoje. E não em cinco anos. A Europa poderia adotar sua própria estrutura no próximo verão. Não será muito cedo, considerando que a próxima atualização Dall-E e ChatGPT deste mundo é esperada ainda este ano. GPT-4 Lançado no início de dezembro de 2022, o ChatGPT precisou de apenas uma semana para agitar toda a internet. Este software baseado na web é baseado em um modelo de aprendizado de máquina chamado GPT-3. Era, na época, a versão mais recente do modelo “Transformador Pré-treinado Generativo” produzido e constantemente desenvolvido por pesquisadores da OpenAI, empresa por trás desse sistema. Em sua compreensão e geração de texto ou linguagem, o sistema GPT-3 processa as informações que recebe de 175 bilhões de critérios diferentes. É enorme! Este também é um problema sério com esta tecnologia: é extremamente intensiva em energia. Ainda assim, isso não é nada comparado ao que será o GPT-4, sua próxima iteração. De acordo com o que os executivos da OpenAI disseram recentemente, o GPT-4 poderia processar informações de acordo com uma série de critérios que dizem estar entre 1 e 100 trilhões (ou seja, entre 1000 e 100 trilhões de critérios). Este sistema será muito mais poderoso; ele quase vai ler nossos pensamentos! Ele poderia entender melhor nossas intenções por trás das perguntas que fazemos a ele, sem que elas sejam explícitas. Ele também poderia responder de uma forma ainda mais natural, ou pelo menos mais capaz de imitar a conversa humana. A OpenAI conhece os limites de sua tecnologia e pode incluir salvaguardas no GPT-4 que limitarão a capacidade da IA ​​de inventar falsidades. Isso pode assumir a forma de algoritmos de aprendizado por reforço que levam mais em conta o feedback do usuário. Porque, sim, a interação com os humanos permite",
       "id": 27
+    },
+    {
+      "autor_id": "1",
+      "categoria_id": 4,
+      "titulo": "A LGPD aplicada na área da saúde  Epa! Vimos que você copiou o texto. Sem problemas, desde ",
+      "conteudo": "Os estabelecimentos da área da saúde manuseiam grande quantidade de dados pessoais, em especial, dados sensíveis referentes à saúde. Desta forma, importante conhecer e seguir as regras relacionadas ao tratamento de dados pessoais estabelecidas pela Lei Geral de Proteção de Dados.\n\nlink: https://www.migalhas.com.br/depeso/380250/a-lgpd-aplicada-na-area-da-saude",
+      "id": 28
     }
   ],
   "comentarios": [
@@ -272,6 +291,36 @@
       "postagem_id": "20",
       "conteudo": "valeu pelo dica",
       "id": 15
+    },
+    {
+      "user_id": "7",
+      "postagem_id": "6",
+      "conteudo": "teste de comentario feito",
+      "id": 16
+    },
+    {
+      "user_id": "7",
+      "postagem_id": "7",
+      "conteudo": "teste comentario 2 feito",
+      "id": 17
+    },
+    {
+      "user_id": "7",
+      "postagem_id": "8",
+      "conteudo": "teste comentario 3 feita com sucesso",
+      "id": 18
+    },
+    {
+      "user_id": "1",
+      "postagem_id": "6",
+      "conteudo": "zxv,xcvbnxcb",
+      "id": 19
+    },
+    {
+      "user_id": "8",
+      "postagem_id": "6",
+      "conteudo": "dfhbkjhbkcvhkbjc",
+      "id": 20
     }
   ]
 }
